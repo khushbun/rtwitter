@@ -23,5 +23,5 @@ else {
 	$user = $connection->get("account/verify_credentials");
 	$statuses = $connection->get("search/tweets", ["q" => "sweet_khushbu_n"]);
 	echo $user->screen_name;
-	echo $statuses;
+	echo "status".$statuses;
 }
