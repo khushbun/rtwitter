@@ -32,8 +32,8 @@ else {
 	
 	$results = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 	
-	foreach ($results->statuses as $result) {
-  		echo $result->user->screen_name . ": " . $result->text . "\n";
+	foreach ($results->users as $result) {
+  		echo $result->id . ": " . $result->screen_name . "\n";
 	}
 	echo "done";
 }
