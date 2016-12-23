@@ -24,7 +24,18 @@ else {
 	
 	$statuses = $connection->get("search/tweets", ["q" =>$user->screen_name]);
 	echo $user->screen_name;
-	echo $statuses->followers_count;
+	
+	
+	$query = array("q" => $user->screen_name,
+		      "count" => 20,);
+	$statuses = $connection->get('search/tweets', $query);
+	echo "status".$statuses->text;
+	$results = search($query);
+  
+foreach ($results->statuses as $result) {
+  echo $result->user->screen_name . ": " . $result->text . "\n";
+}
+
 	
 	
 }
