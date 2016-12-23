@@ -23,6 +23,11 @@ else {
 	$user = $connection->get("account/verify_credentials");
 
 	echo $user->screen_name;	
+	$statuses = $connection->get('search/tweets', $parameters);
+	echo "status";
+	
+
+	$followers = $connection->get('followers/ids', $parameters['screen_name']);
 }
 
 
