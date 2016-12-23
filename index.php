@@ -22,6 +22,6 @@ else {
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	$user = $connection->get("account/verify_credentials");
 	echo "screen_name".$user->screen_name;
-	echo "<br/>id:"$user->id;
+	
 	
 }
