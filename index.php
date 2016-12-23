@@ -25,5 +25,5 @@ else {
 	$statuses = $connection->get('search/tweets',["q" => $user->screen_name]);
 	
 	
-	echo $user->screen_name." output : ".$statuses;
+	echo $user->screen_name." output : ";
 }
