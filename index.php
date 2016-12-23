@@ -23,7 +23,7 @@ else {
 	$user = $connection->get("account/verify_credentials");
 	$statuses = $connection->get("search/tweets", ["q" =>$user->screen_name]);
 	echo $user->screen_name;
-	echo $statuses;
+	echo $statuses->text;
 	
 	
 }
