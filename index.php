@@ -24,11 +24,7 @@ else {
 
 	echo $user->screen_name;
 
-	$parameters['count'] = 10;
-	$parameters['screen_name'] = $user->screen_name;
-
-	$statuses = $connection->get('search/tweets', $parameters);
-	echo "status";
+	
 	
 }
 
