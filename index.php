@@ -24,4 +24,14 @@ else {
 	$statuses = $connection->get("search/tweets", ["q" => "sweet_khushbu_n"]);
 	echo $user->screen_name;
 	echo "status".$statuses;
+	
+	
+	$url = 'https://api.twitter.com/1.1/followers/ids.json';
+$getfield = '?screen_name='.$user->screen_name;
+$requestMethod = 'GET';
+
+$twitter = new TwitterAPIExchange($settings);
+echo $twitter->setGetfield($getfield)
+    ->buildOauth($url, $requestMethod)
+    ->performRequest();
 }
