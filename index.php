@@ -22,15 +22,9 @@ else {
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	$user = $connection->get("account/verify_credentials");
 
-	$statuses = $connection->get('search/tweets',["q" => $user->screen_name]);
-	
-	
-	echo $user->screen_name." output : ";
-	$obj = json_decode($statuses);
-	echo $obj;
-	
-	foreach ($obj as $value) {
-    		echo $value;
+	$results = $connection->get('search/tweets',["q" => $user->screen_name]);
+	foreach ($results->statuses as $result) {
+  		echo $result->user->screen_name . ": " . $result->text . "\n";
 	}
-	echo "xyz";
+	echo "done";
 }
