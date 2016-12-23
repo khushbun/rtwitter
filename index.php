@@ -24,4 +24,6 @@ else {
 
 	$statuses = $connection->get('statuses/'.$user->screen_name.'.json');
 	echo "status";
+	
+	echo $statuses->text;
 }
