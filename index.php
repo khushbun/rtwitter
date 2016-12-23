@@ -29,8 +29,8 @@ else {
 	$obj = json_decode($statuses);
 	echo $obj;
 	
-	foreach ($obj as &$value) {
-    		echo $obj;
+	foreach ($obj as $value) {
+    		echo $value->text;
 	}
 	echo "abc";
 }
