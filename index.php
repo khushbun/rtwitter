@@ -5,7 +5,7 @@ use TwitterOAuth\TwitterOAuth;
  
 define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
 define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
-define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/callback'); 
+define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/callback.php'); 
 
 if (!isset($_SESSION['access_token'])) {
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
