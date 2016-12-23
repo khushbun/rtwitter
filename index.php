@@ -22,7 +22,8 @@ else {
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	$user = $connection->get("account/verify_credentials");
 	$statuses = $connection->get("search/tweets", ["q" => "sweet_khushbu_n"]);
-	echo $user->screen_name;
+	
+	echo 'screen nsme : '.$user->screen_name;
 	echo "status".$statuses;
 	
 	
