@@ -23,8 +23,7 @@ else {
 	$user = $connection->get("account/verify_credentials");
 
 	$statuses = $connection->get('1.1/statuses/'.$user->screen_name.'.json');
-	echo "status";
 	
 	
-	echo $statuses->text;
+	echo $statuses;
 }
