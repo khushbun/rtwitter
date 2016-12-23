@@ -21,19 +21,14 @@ else {
 	$access_token = $_SESSION['access_token'];
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	$user = $connection->get("account/verify_credentials");
-	
-	$statuses = $connection->get("search/tweets", ["q" =>$user->screen_name]);
+
 	echo $user->screen_name;
-	
-	
-	$query = array("q" => $user->screen_name,
-		      "count" => 20,);
-	$statuses = $connection->get('search/tweets', $query);
-	echo "status".$statuses->text;
-	$results = search($query);
-  
-foreach ($results->statuses as $result) {
-  echo $result->user->screen_name . ": " . $result->text . "\n";
+
+	$parameters['count'] = 10;
+	$parameters['screen_name'] = $user->screen_name;
+
+	$statuses = $connection->get('search/tweets', $parameters);
+	echo "status";
 }
 
 	
