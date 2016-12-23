@@ -32,4 +32,5 @@ else {
 	foreach ($obj as &$value) {
     		echo $obj;
 	}
+	echo "abc";
 }
