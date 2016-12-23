@@ -30,7 +30,7 @@ else {
 	echo $obj;
 	
 	foreach ($obj as $value) {
-    		echo $value->text;
+    		echo $value;
 	}
 	echo "xyz";
 }
