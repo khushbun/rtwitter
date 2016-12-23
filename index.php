@@ -32,5 +32,5 @@ else {
 	foreach ($obj as $value) {
     		echo $value->text;
 	}
-	echo "abc";
+	echo "xyz";
 }
