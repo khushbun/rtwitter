@@ -29,6 +29,7 @@ else {
 
 	$statuses = $connection->get('search/tweets', $parameters);
 	echo "status";
+	pr($statuses);
 }
 
 	
