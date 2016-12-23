@@ -26,4 +26,10 @@ else {
 	
 	
 	echo $user->screen_name." output : ";
+	$obj = json_decode($statuses);
+	echo $obj;
+	
+	foreach ($obj as &$value) {
+    		echo $obj;
+	}
 }
