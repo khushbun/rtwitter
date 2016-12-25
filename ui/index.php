@@ -22,7 +22,7 @@
 						<p>See your 'Tweets', 'Timeline Tweets' <br/>and 'Followers' after authentication</p>
 					</div>
 					<div class="col-sm-12 col-md-12 col-lg-12" style="">
-						<a href="https://rtwittertest.herokuapp.com/maincontent.php" >
+						<a href="https://rtwittertest.herokuapp.com/ui/maincontent.php" >
 							<button type="button" class="btn btn-primary">Sign In</button>
 						</a>
 					</div>
