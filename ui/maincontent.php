@@ -54,15 +54,7 @@
 						
 						<div class="ui-widget">
 							<input id="tags">
-							<script>
-							  $( function() {
-
-							    var availableTags = <?php  echo json_encode($followers->users); ?>;
-							    $( "#tags" ).autocomplete({
-							      source: availableTags
-							    });
-							  } );
-							</script>
+							
 						</div>
 						  
 					</div>
