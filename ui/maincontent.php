@@ -52,11 +52,6 @@
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
 						
-						<div class="ui-widget">
-							<input id="tags">
-							
-						</div>
-						  
 					</div>
 				</div>
 				
