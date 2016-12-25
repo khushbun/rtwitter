@@ -62,7 +62,7 @@
 								$user = $connection->get("account/verify_credentials");
 
 								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
+								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
 
 								<div class="slider-wrap">
 									<ul class="bxslider" style="color:black;">
