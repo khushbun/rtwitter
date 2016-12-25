@@ -17,13 +17,6 @@ header('Location: '.$url);
 	
 } 
 
-else {
-	$access_token = $_SESSION['access_token'];
-	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-	$user = $connection->get("account/verify_credentials");
-	
-	$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -85,9 +78,15 @@ else {
 					<div class="col-lg-6 col-md-12 col-sm-12">
 						<ul class="list-group"style="color:black;">
 						
-						<?php foreach ($tweets as $result) { 
-						   echo '<li class="list-group-item">'.$result->user->name . ": " . $result->text.'</li>';
-						   ?>
+
+						<?php else {
+	$access_token = $_SESSION['access_token'];
+	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+	$user = $connection->get("account/verify_credentials");
+	
+	$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
+	}
+							
 					  	</ul>	
 		
 					</div>
