@@ -52,9 +52,7 @@
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
 						<script>
-							  $( function() {
-							    <?php
-							// Array with names
+							 $( function() {
 
 							    var availableTags = <?php  echo json_encode($followers->users); ?>;
 							    $( "#tags" ).autocomplete({
