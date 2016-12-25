@@ -67,6 +67,17 @@
 						</datalist>
 					</div>
 				</div>
+				<div class="row" style="padding-top:5%;">
+					<div class="col-lg-1"></div>
+					<div class="col-lg-10">
+						<input type="text" id="txtAutoComplete1" class="form-control" list="languageList1"/><!--your input textbox-->
+						<datalist id="languageList1">
+							<?php foreach($ajaxfollowers->users as $b){?>
+						<option value="<?php echo $b->screen_name;?>" /><?php }?>
+						
+						</datalist>
+					</div>
+				</div>
 				
 				<div class="row">
 					<div class="col-lg-1"></div>
