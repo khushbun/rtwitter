@@ -19,11 +19,7 @@
 		$user = $connection->get("account/verify_credentials");
 
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
-
-		
-		
-?>
+		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
 <html>
 	<head>
@@ -103,6 +99,13 @@
 								<?php echo $result->screen_name;}} ?>
 							</li>
 						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+						<a href="https://rtwittertest.herokuapp.com/ui/download.php" class="btn btn-success" role="button">
+							download
+						</a>
 					</div>
 				</div>
 			</div>
