@@ -51,7 +51,9 @@
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
-						
+						<div class="form-group has-feedback ui-widget">
+							<input id="tags">
+						</div>
 					</div>
 				</div>
 				
