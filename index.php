@@ -29,8 +29,8 @@ else {
 	}
 	
 	echo "TimelineTweets :<br/>";
-	$tweets = $connection->get('search/tweets',["q" =>$user->screen_name]);
-	foreach ($tweets->text as $result) {
+	$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
+	foreach ($tweets as $result) {
   		echo $result->user->name . ": " . $result->text . "<br/>";
 	}
 
