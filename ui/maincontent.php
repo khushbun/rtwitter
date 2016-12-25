@@ -7,6 +7,11 @@
 		<link href="assets/lib/jquery.bxslider.css" rel="stylesheet" />
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
+		<style>
+			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
+			.bxslider {margin-top:0}
+			.bxslider li {left:0}
+		</style>
 	</head>
 	<body style="background-color: black; color:#fff;">
 		<center>
@@ -59,21 +64,23 @@
 								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
-								<div class="slider1">
+								<div class="slider-wrap">
+									<ul class="bxslider" style="color:black;">
 								<?php foreach ($tweets as $result) {?>
-						  		<div class="slide"><img src="http://placehold.it/350x150&text=<?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></div>
+						  		<li><p><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></p></li>
 								<?php } ?>
+								</ul>
 								</div>
-						 		
 						<script>
+
 							$(document).ready(function(){
-							  $('.slider1').bxSlider({
-							    slideWidth: 800,
-							    minSlides: 1,
-							    maxSlides: 1,
-							    slideMargin: 10
-							  });
+								$('.bxslider').bxSlider({
+									mode: 'fade',
+							  		controls: false,
+							  		adaptiveHeight: true
 							});
+							});
+
 						</script>
 					</div>
 					<div class="col-lg-2"></div>
