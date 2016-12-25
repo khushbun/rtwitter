@@ -60,9 +60,16 @@
 								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
 							 foreach ($tweets as $result) {?>
-								<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; } } ?></li> 
+								<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; }  ?></li> 
 							
 					  	</ul>
+					</div>
+					<div class="col-lg-1"></div>
+					<div class="col-lg-5 col-md-12 col-sm-12">
+						<ul class="list-group"style="color:black;">
+							<?php foreach ($followers->users as $result){?>
+							<li class="list-group-item"><?php echo $result->screen_name;}} ?></li>
+						</ul>
 					</div>
 				</div>
 			</div>
