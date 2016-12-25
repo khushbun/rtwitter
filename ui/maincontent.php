@@ -1,3 +1,27 @@
+<?php session_start();
+	require 'autoload.php';
+	use TwitterOAuth\TwitterOAuth;
+
+	define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
+	define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
+	define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/ui/callback.php'); 
+	if (!isset($_SESSION['access_token'])) {
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+		$request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
+		$_SESSION['oauth_token'] = $request_token['oauth_token'];
+		$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
+		$url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+	// echo $url;
+	header('Location: '.$url);} 
+	else {
+		$access_token = $_SESSION['access_token'];
+		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
+		$user = $connection->get("account/verify_credentials");
+
+		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
+		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+
+		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
 <html>
 	<head>
 		<title>twitter signup</title>
@@ -5,8 +29,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 		<link href="assets/lib/jquery.bxslider.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/js/jquery-ui.css">
+		<script src="assets/js/jquery-1.12.4.js"></script>
+		<script src="assets/js/jquery-ui.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
+		
 		<style>
 			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
 			.bxslider {margin-top:0}
@@ -23,10 +51,20 @@
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
-						<div class="form-group has-feedback">
-							<label for="search" class="sr-only">Search followers</label>
-							<input type="text" class="form-control" name="search" id="search" placeholder="search">
-							<span class="glyphicon glyphicon-search form-control-feedback"></span>
+						<script>
+							  $( function() {
+							    <?php
+							// Array with names
+
+							    var availableTags = <?php  echo json_encode($followers->users); ?>;
+							    $( "#tags" ).autocomplete({
+							      source: availableTags
+							    });
+							  } );
+						  </script>
+						<div class="form-group has-feedback ui-widget">
+							<label for="tags">Tags: </label>
+							  <input id="tags">
 						</div>
 					</div>
 				</div>
@@ -41,45 +79,22 @@
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						
-						<?php session_start();
-							require 'autoload.php';
-							use TwitterOAuth\TwitterOAuth;
- 
-							define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
-							define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
-							define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/ui/callback.php'); 
-							if (!isset($_SESSION['access_token'])) {
-								$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
-								$request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
-								$_SESSION['oauth_token'] = $request_token['oauth_token'];
-								$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
-								$url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
-							// echo $url;
-							header('Location: '.$url);} 
-							else {
-								$access_token = $_SESSION['access_token'];
-								$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-								$user = $connection->get("account/verify_credentials");
+						
 
-								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-								$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
-								
-								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
-
-								<div class="slider-wrap">
-									<ul class="bxslider" style="color:black;">
-								<?php foreach ($tweets as $result) {?>
-						  		<li><p><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></p></li>
-								<?php } ?>
-								</ul>
-								</div>
+						<div class="slider-wrap">
+							<ul class="bxslider" style="color:black;">
+						<?php foreach ($tweets as $result) {?>
+						<li><p><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></p></li>
+						<?php } ?>
+						</ul>
+						</div>
 						<script>
 
 							$(document).ready(function(){
 								$('.bxslider').bxSlider({
 									mode: 'fade',
-							  		controls: false,
-							  		adaptiveHeight: true
+									controls: false,
+									adaptiveHeight: true
 							});
 							});
 
@@ -87,7 +102,7 @@
 					</div>
 					<div class="col-lg-2"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-						<ul class="list-group"style="color:black;">
+						<ul class="list-group "style="color:black;">
 							<?php foreach ($followers->users as $result){?>
 							<li class="list-group-item">
 								
