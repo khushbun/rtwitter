@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+require 'autoload.php';
+use TwitterOAuth\TwitterOAuth;
+ 
+define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
+define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
+define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/ui/callback.php'); ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
