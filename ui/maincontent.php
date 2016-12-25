@@ -21,7 +21,7 @@
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
-		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+		
 		
 ?>
 
@@ -49,24 +49,7 @@
 					<div class="col-lg-3"></div>
 					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
 				</div>
-				<div class="row" style="padding-top:5%;">
-					<div class="col-lg-1"></div>
-					<div class="col-lg-10">
-						<input type="text" id="txtAutoComplete" class="form-control" list="languageList"/><!--your input textbox-->
-						<datalist id="languageList">
-						<option value="HTML" />
-						<option value="CSS" />
-						<option value="JavaScript" />
-						<option value="SQL" />
-						<option value="PHP" />
-						<option value="jQuery" />
-						<option value="Bootstrap" />
-						<option value="Angular" />
-						<option value="ASP.NET" />
-						<option value="XML" />
-						</datalist>
-					</div>
-				</div>
+				
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
@@ -112,6 +95,7 @@
 					</div>
 					<div class="col-lg-2"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
+					<?php $followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
 						<ul class="list-group "style="color:black;">
 							<?php foreach ($followers->users as $result){?>
 							<li class="list-group-item">
