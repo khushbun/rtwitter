@@ -61,12 +61,14 @@
 
 								<div class="slider1">
 								<?php foreach ($tweets as $result) {?>
-						  		<div class="slide"><img src="http://placehold.it/350x150&text=<?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?>"></div>
+						  		<div class="slide"><img src="http://placehold.it/350x150&text=<?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></div>
+								<?php } ?>
+								</div>
 						 		
 						<script>
 							$(document).ready(function(){
 							  $('.slider1').bxSlider({
-							    slideWidth: 1000,
+							    slideWidth: 800,
 							    minSlides: 1,
 							    maxSlides: 1,
 							    slideMargin: 10
