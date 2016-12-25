@@ -1,4 +1,5 @@
 <?php
+echo "hiii";die();
 session_start();
 require 'autoload.php';
 use TwitterOAuth\TwitterOAuth;
