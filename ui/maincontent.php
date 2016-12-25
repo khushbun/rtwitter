@@ -58,8 +58,7 @@
 
 								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 
-								foreach ($tweets as $result) {?>
-								<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; } } ?></li> 
+							} ?>
 							
 					  	</ul>
 					</div>
