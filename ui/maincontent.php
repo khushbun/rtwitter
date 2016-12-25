@@ -59,14 +59,18 @@
 								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
-								<ul class="bxslider">
+								<div class="slider1">
 								<?php foreach ($tweets as $result) {?>
-						  		<li><img src="assets/images/a.png" style="display:none" /><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?></li>
+						  		<div class="slide"><img src="http://placehold.it/350x150&text=<?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?>"></div>
 						 		
-							</ul>
 						<script>
 							$(document).ready(function(){
-							  $('.bxslider').bxSlider();
+							  $('.slider1').bxSlider({
+							    slideWidth: 1000,
+							    minSlides: 1,
+							    maxSlides: 1,
+							    slideMargin: 10
+							  });
 							});
 						</script>
 					</div>
