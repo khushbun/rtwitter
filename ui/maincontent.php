@@ -61,7 +61,7 @@
 
 								<ul class="bxslider">
 								<?php foreach ($tweets as $result) {?>
-						  		<li><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?></li>
+						  		<li><img src="assets/images/a.png" style="display:none" /><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?></li>
 						 		
 							</ul>
 						<script>
@@ -74,7 +74,10 @@
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<ul class="list-group"style="color:black;">
 							<?php foreach ($followers->users as $result){?>
-							<li class="list-group-item"><?php echo $result->screen_name;}} ?></li>
+							<li class="list-group-item">
+								
+								<?php echo $result->screen_name;}} ?>
+							</li>
 						</ul>
 					</div>
 				</div>
