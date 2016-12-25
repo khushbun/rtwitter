@@ -34,7 +34,15 @@
 		<script src="assets/js/jquery-ui.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
-		
+		<script>
+			  $( function() {
+
+			    var availableTags = <?php  echo json_encode($followers->users); ?>;
+			    $( "#tags" ).autocomplete({
+			      source: availableTags
+			    });
+			  } );
+		</script>
 		<style>
 			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
 			.bxslider {margin-top:0}
@@ -51,15 +59,7 @@
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
-						<script>
-							  $( function() {
-
-							    var availableTags = <?php  echo json_encode($followers->users); ?>;
-							    $( "#tags" ).autocomplete({
-							      source: availableTags
-							    });
-							  } );
-						  </script>
+						
 						<div class="form-group has-feedback ui-widget">
 							<input id="tags">
 						</div>
