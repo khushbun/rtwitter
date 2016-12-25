@@ -22,18 +22,25 @@ else {
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	$user = $connection->get("account/verify_credentials");
 
-	echo "tweets";
-	$results = $connection->get('search/tweets',["q" =>$user->screen_name]);
-	foreach ($results->statuses as $result) {
-  		echo $result->user->screen_name . ": " . $result->text . "\n";
+	echo "Tweets :<br/>";
+	$usertweets = $connection->get('search/tweets',["q" =>$user->screen_name]);
+	foreach ($usertweets->statuses as $result) {
+  		echo $result->user->screen_name . ": " . $result->text . "<br/>";
 	}
 	
-	echo "followers";
-	
-	$results = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
-	
-	foreach ($results->users as $result) {
-  		echo $result->id . ": " . $result->screen_name . "\n";
+	echo "TimelineTweets :<br/>";
+	$tweets = $connection->get('search/tweets',["q" =>$user->screen_name]);
+	foreach ($tweets->text as $result) {
+  		echo $result->user->name . ": " . $result->text . "<br/>";
 	}
+
+	echo "Followers : <br/>";	
+	$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+	
+	foreach ($followers->users as $result) {
+  		echo $result->id . ": " . $result->screen_name . "<br/>";
+	}
+
+
 	echo "done";
 }
