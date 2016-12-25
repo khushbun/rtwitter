@@ -81,7 +81,7 @@
 						$user = $connection->get("account/verify_credentials");
 
 						$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-						}
+						}?>
 							
 					  	</ul>	
 		
