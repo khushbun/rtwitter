@@ -30,32 +30,18 @@
 					</div>
 
 				</div>
+				
 				<div class="row">
+					<div class="col-lg-1"></div>
+					<div class="col-lg-4"><h4>10 recent Tweets</h4></div>
+					<div class="col-lg-4"><h4>10 Followers</h4></div>
 					
-					<div class="col-lg-3"></div>
-					<div class="col-lg-6 col-md-12 col-sm-12">
-					
-						<ul class="bxslider">
-						  		<li><img src="assets/images/a.jpg"/></li>
-						
-						</ul>
-						<script>
-							$(document).ready(function(){
-							  $('.bxslider').bxSlider();
-							});
-						</script>
-					</div>
-				</div>	
-				<div class="row">
-					<div class="col-lg-4"></div>
-					
-					<div class="col-lg-3"><h4>Followers</h4></div>
 				</div>
 				<div class="row" >
 					
 					
-					<div class="col-lg-3"></div>
-					<div class="col-lg-6 col-md-12 col-sm-12">
+					<div class="col-lg-1"></div>
+					<div class="col-lg-5 col-md-12 col-sm-12">
 						<ul class="list-group"style="color:black;">
 						
 
@@ -83,13 +69,21 @@
 						$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 						
 						foreach ($tweets as $result) {?>
-							<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ;} }?></li>
+							<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; ?></li><?php } ?>
 							
 					  	</ul>	
 		
 					</div>
+					<div class="col-lg-1"></div>
+					<div class="col-lg-5 col-md-12 col-sm-12">
+						<ul class="list-group"style="color:black;">
+							$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+							foreach ($followers->users as $result){?>
+							<li class="list-group-item"><?php echo $result->screen_name ; ?></li><?php } }?>
+						</ul>
+					</div>
 				</div>
-				 	</div>
+			</div>
 		</center>
 	</body>
 </html>
