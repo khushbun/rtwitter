@@ -21,7 +21,10 @@
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
-		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
+		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+		
+?>
+
 <html>
 	<head>
 		<title>twitter signup</title>
@@ -49,7 +52,13 @@
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10">
-						
+						<input type="text" id="txtAutoComplete" class="form-control" list="languageList"/><!--your input textbox-->
+						<datalist id="languageList">
+						<?php foreach($ajaxfollowers->users as $b){
+						  echo '<option value="'.$b.'" />';
+						}
+						?>
+						</datalist>
 					</div>
 				</div>
 				
