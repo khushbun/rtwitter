@@ -30,7 +30,7 @@
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 		<link href="assets/lib/jquery.bxslider.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/js/jquery-ui.css">
-		<script src="assets/js/jquery-1.12.4.js"></script>
+		
 		<script src="assets/js/jquery-ui.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
