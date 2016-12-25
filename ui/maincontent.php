@@ -54,10 +54,16 @@
 					<div class="col-lg-10">
 						<input type="text" id="txtAutoComplete" class="form-control" list="languageList"/><!--your input textbox-->
 						<datalist id="languageList">
-						<?php foreach($ajaxfollowers->users as $b){
-						  echo '<option value="'.$b.'" />';
-						}
-						?>
+						<option value="HTML" />
+						<option value="CSS" />
+						<option value="JavaScript" />
+						<option value="SQL" />
+						<option value="PHP" />
+						<option value="jQuery" />
+						<option value="Bootstrap" />
+						<option value="Angular" />
+						<option value="ASP.NET" />
+						<option value="XML" />
 						</datalist>
 					</div>
 				</div>
