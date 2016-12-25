@@ -84,9 +84,10 @@ else {
 					<div class="col-lg-3"></div>
 					<div class="col-lg-6 col-md-12 col-sm-12">
 						<ul class="list-group"style="color:black;">
-						    <li class="list-group-item">First item</li>
-						    <li class="list-group-item">Second item</li>
-						    <li class="list-group-item">Third item</li>
+						
+						<?php foreach ($tweets as $result) { 
+						   echo '<li class="list-group-item">'.$result->user->name . ": " . $result->text.'</li>';
+						   ?>
 					  	</ul>	
 		
 					</div>
