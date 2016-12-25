@@ -35,7 +35,7 @@
 				<div class="row" >
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-						<ul class="list-group"style="color:black;">
+						
 						<?php session_start();
 							require 'autoload.php';
 							use TwitterOAuth\TwitterOAuth;
@@ -57,12 +57,18 @@
 								$user = $connection->get("account/verify_credentials");
 
 								$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+								$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
-							 foreach ($tweets as $result) {?>
-								<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; }  ?></li> 
-							
-					  	</ul>
+								<ul class="bxslider">
+								<?php foreach ($tweets as $result) {?>
+						  		<li><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";} ?></li>
+						 		
+							</ul>
+						<script>
+							$(document).ready(function(){
+							  $('.bxslider').bxSlider();
+							});
+						</script>
 					</div>
 					<div class="col-lg-2"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
