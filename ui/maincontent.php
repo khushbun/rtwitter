@@ -69,7 +69,7 @@
 						$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 						
 						foreach ($tweets as $result) {?>
-							<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; ?></li><?php } ?>
+							<li class="list-group-item"><?php echo $result->user->name . ": " . $result->text ; } ?></li> 
 							
 					  	</ul>	
 		
@@ -79,7 +79,7 @@
 						<ul class="list-group"style="color:black;">
 							$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 							foreach ($followers->users as $result){?>
-							<li class="list-group-item"><?php echo $result->screen_name ; ?></li><?php } }?>
+							<li class="list-group-item"><?php echo $result->screen_name;}} ?></li>
 						</ul>
 					</div>
 				</div>
