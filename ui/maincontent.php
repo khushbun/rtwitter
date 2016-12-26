@@ -121,20 +121,8 @@
 								var data="<?php echo $a ?>";
 								console.log(data);
 								function download_csv() {
-								    var csv = 'Name,Title\n';
-								    data.forEach(function(row) {
-									    csv += row.join(',');
-									    csv += "\n";
-								    });
-
-								    console.log(csv);
-								    console.log(data);
-
-								    var hiddenElement = document.createElement('a');
-								    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-								    hiddenElement.target = '_blank';
-								    hiddenElement.download = 'people.csv';
-								    hiddenElement.click();
+								    document.location = 'data:Application/octet-stream,' +
+                        						 encodeURIComponent(data);
 								}
 						</script>
 							<button onclick="download_csv()">Download CSV</button> 
