@@ -107,9 +107,10 @@
 						        
 								<?php $dtweets = $connection->get('statuses/home_timeline');
 									}?>
-							var data = <?php echo json_encode($dtweets) ?>;
+							
 
 						<script>
+							var data = <?php echo json_encode($dtweets) ?>;
 							function download_csv() {
 							    var csv = 'Name,Tweet\n';
 							    data.forEach(function(row) {
