@@ -1,6 +1,7 @@
 <?php session_start();
 	require 'autoload.php';
 	use TwitterOAuth\TwitterOAuth;
+	include("ahtml.php");
 
 	define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
 	define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
@@ -49,10 +50,7 @@
 			<div class="container" style="padding-top:5%;">
 				<div class="row">
 					<div class="col-lg-3">
-						<form action="https://rtwittertest.herokuapp.com/ui/ahtml.php" method="post">
-							<input type='hidden' name='input_name' value="<?php echo htmlentities(serialize($a));?>" />
-							<input type="submit">
-						</form>
+						
 					</div>
 					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
 
