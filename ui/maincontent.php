@@ -103,9 +103,9 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								        var s = '<?php echo json_encode($a); ?>';
+								        var s = <?php echo $a; ?>;
 									console.log(s);
-									alert(JSON.stringify(s));
+									//alert(JSON.stringify(s));
 									$.ajax({
 									  method: "POST",
 									  url: "ahtml.php",
