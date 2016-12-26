@@ -71,7 +71,7 @@
 					<div class="col-lg-1">	
 						<script>
 							var arr;
-							arr = <?php echo json_encode(json_decode($tweets,TRUE)); ?>;
+							arr = <?php echo json_encode($tweets); ?>;
 							console.log(arr);
 						</script>
 					</div>
