@@ -105,7 +105,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						        <script>
-								<?php $dtweets = $connection->get('statuses/home_timeline'); ?>
+								<?php $dtweets = $connection->get('statuses/home_timeline'); }?>
 							var data = JSON.parse(<?php echo json_encode($dtweets) ?>);
 
 
