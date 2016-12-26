@@ -104,12 +104,12 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6">
-						        <script>
+						        
 								<?php $dtweets = $connection->get('statuses/home_timeline');
-									print_r($dtweets);die();}?>
-							var data = ['<?php echo json_encode($dtweets->text) ?>'];
+									}?>
+							var data = [['<?php echo json_encode($dtweets) ?>']];
 
-
+						<script>
 							function download_csv() {
 							    var csv = 'Name,Tweet\n';
 							    data.forEach(function(row) {
@@ -124,7 +124,7 @@
 							    hiddenElement.download = 'tweets.csv';
 							    hiddenElement.click();
 							}
-</script>
+						</script>
 						<button onclick="download_csv()" class="btn btn-success">Download CSV</button>
 						
 					</div>
