@@ -24,7 +24,7 @@
 		$a= Array();
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
-				$a[$c->user->name] = $c->text;							
+				$a['$c->user->name'] = $c->text;							
 		}
 		$_SESSION['a']=$a;
 		$ex = "hello";
@@ -91,6 +91,7 @@
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
 								        var s = "<?php echo $a; ?>";
+									console.log(s);
 									alert(JSON.stringify(s));
 									$.ajax({
 									  method: "POST",
