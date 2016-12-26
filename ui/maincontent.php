@@ -110,20 +110,20 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<center>
-							<script>
+							
 								
 								 <?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 									$a='';
 									foreach($dt as $c){
 										$a.=$c->user->name . ": " . $c->text."\xA";							
 									}} ?>
-								
-								var data="<?php echo $a; ?>";
-								console.log(data);
-								function download_csv() {
-								    document.location = 'data:Application/octet-stream,' +
-                        						 encodeURIComponent(data);
-								}
+						<script>
+							var data="<?php echo $a; ?>";
+							alert(data);
+							function download_csv() {
+							    document.location = 'data:Application/octet-stream,' +
+								 encodeURIComponent(data);
+							}
 						</script>
 							<a href="javascript:download_csv();">Download</a>
 						</center>
