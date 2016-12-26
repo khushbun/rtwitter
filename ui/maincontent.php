@@ -53,7 +53,7 @@
 		
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
-		<script src="http://danml.com/js/download.js?v3.1"></script>
+		<script src="assets/js/download.js?v3.1"></script>
 		<style>
 			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
 			.bxslider {margin-top:0}
