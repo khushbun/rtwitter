@@ -93,11 +93,11 @@
 								$(document).on("click", "#click", function(){
 								        var s = <?php echo json_encode($a); ?>;
 									console.log(s);
-									alert(JSON.stringify(s));
+									alert(s);
 									$.ajax({
 									  method: "POST",
 									  url: "ahtml.php",
-									  data: { d: JSON.stringify(s) }
+									  data: { d: s}
 									})
 									  .done(function( msg ) {
 										/*$.fileDownload("Tweets.json").done(function(){
