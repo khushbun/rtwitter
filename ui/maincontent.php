@@ -66,7 +66,30 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1"></div>
+					<div class="col-lg-1">
+						<script>
+							var data = [['<?php echo json_encode($tweets); ?>']];
+							 var str = '';
+
+							function download_csv() {
+							    var csv = 'Name,Title\n';
+							    data.forEach(function(row) {
+								    csv += row.join(',');
+								    csv += "\n";
+							    });
+
+							    console.log(csv);
+							    console.log(data);
+
+							    var hiddenElement = document.createElement('a');
+							    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+							    hiddenElement.target = '_blank';
+							    hiddenElement.download = 'people.csv';
+							    hiddenElement.click();
+							}
+						</script>
+ 
+						<button onclick="download_csv()">Download CSV</button> </div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						
 						
