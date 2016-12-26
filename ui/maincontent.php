@@ -103,7 +103,7 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								        var s = \'<?php echo json_encode($a); ?>\';
+								        var s = <?php echo json_encode($a); ?>;
 									console.log(s);
 									$.ajax({
 									  method: "POST",
