@@ -1,5 +1,6 @@
 <?php session_start();
 echo $_SESSION['a'];
+die();
 $filename = "tweets.csv";
 $fp = fopen('php://output', 'w');
 $result =$a;
