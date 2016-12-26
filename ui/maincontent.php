@@ -117,7 +117,7 @@
 										}).fail(function(){
 											alert("error");
 										});*/
-										window.location.href = "Tweets.json";
+										window.location = "Tweets.json";
 									    
 									  });
 								 });
