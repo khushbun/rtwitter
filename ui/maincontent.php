@@ -114,7 +114,7 @@
 									  });
 								 });
 								$(document).on("click", "#click2", function(){
-								        var s = "hello";
+								        var s = document.getElementById('txtAutoComplete1');
 									alert(s);
 									 
 								 });
