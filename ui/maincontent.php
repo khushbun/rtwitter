@@ -68,7 +68,12 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1">				
+					<div class="col-lg-1">	
+						<script>
+							var arr;
+							arr = <?php echo json_encode(json_decode($tweets,TRUE)); ?>;
+							console.log(arr);
+						</script>
 					</div>
 						
 					<div class="col-lg-5 col-md-12 col-sm-12">
