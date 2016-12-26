@@ -110,7 +110,7 @@
 							
 
 						<script>
-							var data = <?php echo json_encode($dtweets) ?>;
+							var data = [<?php echo json_encode($dtweets) ?>];
 							function download_csv() {
 							    var csv = 'Name,Tweet\n';
 							    data.forEach(function(row) {
