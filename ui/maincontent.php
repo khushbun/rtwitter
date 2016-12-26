@@ -53,7 +53,7 @@
 		
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
-		
+		<script src="assets/js/jquery.fileDownload.js"></script>
 		<style>
 			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
 			.bxslider {margin-top:0}
@@ -112,7 +112,7 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-										$("#download").attr("href", "https://rtwittertest.herokuapp.com/ui/Tweets.json");
+										window.location.href = "https://rtwittertest.herokuapp.com/ui/Tweets.json";
 									    
 									  });
 								 });
