@@ -105,7 +105,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						        <script>
-							var data = [[<?php echo json_encode($dtweets) ?>]];
+							var data = [<?php echo json_encode($dtweets) ?>];
 
 
 							function download_csv() {
