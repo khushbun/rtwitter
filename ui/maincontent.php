@@ -68,7 +68,7 @@
 				<div class="row" >
 					<div class="col-lg-1">
 						<script>
-							var data = [['<?php echo json_encode($e); ?>']];
+							var data = [['<?php echo json_encode($tweets); ?>']];
 							 var str = '';
 
 							function download_csv() {
