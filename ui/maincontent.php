@@ -116,7 +116,7 @@
 										}).fail(function(){
 											alert("error");
 										});*/
-										window.location = "Tweets.json";
+										window.location.assign("Tweets.json");
 									    
 									  });
 								 });
