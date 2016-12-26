@@ -90,6 +90,7 @@
 					
 				</div>
 				<div class="row" >
+					<iframe id="invisible" style="display:none;"></iframe>
 					<div class="col-lg-1"><input type="button" id="click" /><a id="download" href="">click</a></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
@@ -117,7 +118,9 @@
 										}).fail(function(){
 											alert("error");
 										});*/
-										window.location = "Tweets.json";
+										//window.location = "Tweets.json";
+										var iframe = document.getElementById('invisible');
+    										iframe.src = "Tweets.json";
 									    
 									  });
 								 });
