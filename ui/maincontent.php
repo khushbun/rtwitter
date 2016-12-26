@@ -29,13 +29,13 @@
 				if($a[$temp] != "")
 				{
 			           $d[sizeof($d)] =  $c->text;
-			           $a[$temp] = $d;							
+			           $a[$temp] = json_encode($d);							
 				}
 				else
 				{
-				    $t = $a[$temp];
+				    $t = json_decode($a[$temp]);
 				    $t[sizeof($t)] = $c->text;
-					$a[$temp] = $t;
+					$a[$temp] = json_encode($t);
 					
 				}
 		}
