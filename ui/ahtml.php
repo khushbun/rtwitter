@@ -1,6 +1,6 @@
 <?php 
 require('assets/lib/fpdf.php');
-$a=$_GET['a'];
+$a = unserialize($_POST['input_name']);
 $pdf = new FPDF();
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',16);
