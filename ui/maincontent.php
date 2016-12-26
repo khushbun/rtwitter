@@ -125,7 +125,7 @@
                         						 encodeURIComponent(data);
 								}
 						</script>
-							<button onclick="download_csv()">Download CSV</button> 
+							<a href="javascript:download_csv();">Download</a>
 						</center>
 					</div>
 				</div>
