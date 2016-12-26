@@ -112,7 +112,11 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-										window.location.href = "https://rtwittertest.herokuapp.com/ui/Tweets.json";
+										$.fileDownload("Tweets.json").done(function(){
+											alert("downloaded");
+										}).fail(function(){
+											alert("error");
+										});
 									    
 									  });
 								 });
