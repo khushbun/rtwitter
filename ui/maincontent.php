@@ -102,16 +102,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						        
-								<?php $dtweets = $connection->get('statuses/home_timeline');
-									}?>
-							
-
-						
-					</div>
-				</div>
+				
 			</div>
 		</center>
 	</body>
