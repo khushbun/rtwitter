@@ -78,7 +78,7 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1"><input type="button" id="click" /></div>
+					<div class="col-lg-1"><input type="button" id="click" value="Download Tweets" class="btn btn-success"/></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
@@ -113,6 +113,11 @@
 									    
 									  });
 								 });
+								$(document).on("click", "#click2", function(){
+								        var s = "hello";
+									alert(s);
+									 
+								 });
 								
 								$('.bxslider').bxSlider({
 									mode: 'fade',
@@ -123,7 +128,7 @@
 
 						</script>
 					</div>
-					<div class="col-lg-1"></div>
+					<div class="col-lg-1"><input type="button" id="click2" value="see follower" class="btn btn-success"/></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<ul class="list-group" style="color:black;">
 							<?php foreach ($followers->users as $result){?>
