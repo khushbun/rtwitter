@@ -103,7 +103,7 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								        var s = "<?php echo $a; ?>";
+								        var s = "<?php echo json_encode($a); ?>";
 									console.log(s);
 									//alert(JSON.stringify(s));
 									$.ajax({
@@ -117,7 +117,7 @@
 										}).fail(function(){
 											alert("error");
 										});*/
-										//window.location = "Tweets.json";
+										window.location = "Tweets.json";
 									    
 									  });
 								 });
