@@ -22,6 +22,8 @@
 		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+		$dt = json_decode($tweets);
+		echo $dt;
 ?>
 
 <html>
