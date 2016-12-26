@@ -109,24 +109,6 @@
 									}?>
 							
 
-						<script>
-							var data = [<?php echo json_encode($dtweets) ?>];
-							function download_csv() {
-							    var csv = 'Name,Tweet\n';
-							    data.forEach(function(row) {
-								    csv += row.join(',');
-								    csv += "\n";
-							    });
-
-							    console.log(csv);
-							    var hiddenElement = document.createElement('a');
-							    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
-							    hiddenElement.target = '_blank';
-							    hiddenElement.download = 'tweets.csv';
-							    hiddenElement.click();
-							}
-						</script>
-						<button onclick="download_csv()" class="btn btn-success">Download CSV</button>
 						
 					</div>
 				</div>
