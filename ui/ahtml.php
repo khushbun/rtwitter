@@ -14,5 +14,8 @@ if (file_exists($filename)) {
     header('Pragma: public');
     header('Content-Length: ' . filesize($filename));
     readfile($filename);
-    exit;
-}?>
+    echo "true";
+}
+
+
+?>
