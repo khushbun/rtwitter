@@ -5,7 +5,7 @@ if(isset($_POST["d"]))
   $data = $_POST['d'];
   $filename = "Tweets.json";
   file_put_contents($filename, $data);
-
+/*
   if (file_exists($filename)) {
       header('Content-Description: File Transfer');
       header('Content-Type: application/octet-stream');
@@ -16,7 +16,7 @@ if(isset($_POST["d"]))
       header('Content-Length: ' . filesize($filename));
       readfile($filename);
       exit;
-  }
+  }*/
 }
 
 
