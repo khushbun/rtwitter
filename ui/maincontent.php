@@ -90,7 +90,7 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1"><input type="button" id="click" /></div>
+					<div class="col-lg-1"><input type="button" id="click" /><a id="download" href="">click</a></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
@@ -112,7 +112,8 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-									    window.location = 'https://rtwittertest.herokuapp.com/ui/Tweets.json'; 
+										$("#download").attr("href", "https://rtwittertest.herokuapp.com/ui/Tweets.json");
+									    
 									  });
 								 });
 								
