@@ -15,7 +15,7 @@ if(isset($_POST["d"]))
       header('Pragma: public');
       header('Content-Length: ' . filesize($filename));
       readfile($filename);
-      echo "true";
+      exit;
   }
 }
 
