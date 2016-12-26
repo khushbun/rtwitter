@@ -112,7 +112,7 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-									    window.location.href = 'https://rtwittertest.herokuapp.com/ui/Tweets.json'; 
+									    window.location = 'https://rtwittertest.herokuapp.com/ui/Tweets.json'; 
 									  });
 								 });
 								
