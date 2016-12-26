@@ -89,7 +89,7 @@
 						<script>
 
 							$(document).ready(function(){
-								var a = "<?php echo $ex; ?>";
+								var a = "<?php echo $a; ?>";
 								alert(a);
 								$('.bxslider').bxSlider({
 									mode: 'fade',
