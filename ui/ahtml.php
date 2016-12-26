@@ -18,12 +18,13 @@ if(isset($_POST["d"]))
       readfile($filename);
       exit;
       */
-    $fp = fopen('php://output', 'w');
+    //$fp = fopen('php://output', 'w');
 
 
     header('Content-type: application/json');
     header('Content-Disposition: attachment; filename='.$filename);
-    fput($fp, $header);
+    //fput($fp, $header);
+    readfile($filename);
   }
 }
 
