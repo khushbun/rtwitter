@@ -25,7 +25,19 @@
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
 				$temp = $c->user->name;
-				$a[$temp] = $c->text;							
+				$d = array();
+				if($a[$temp] != "")
+				{
+			           $d[sizeof($d)] =  $c->text;
+			           $a[$temp] = $d;							
+				}
+				else
+				{
+				    $t = $a[$temp];
+				    $t[sizeof($t)] = $c->text;
+					$a[$temp] = $t;
+					
+				}
 		}
 		$_SESSION['a']=$a;
 		$ex = "hello";
@@ -100,7 +112,7 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-									    alert( "Data Saved: " + msg );
+									    window.location.href = 'https://rtwittertest.herokuapp.com/ui/Tweets.json'; 
 									  });
 								 });
 								
