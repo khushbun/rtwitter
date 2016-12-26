@@ -94,14 +94,14 @@
 								        var s = '<?php echo json_encode($a); ?>';
 									console.log(s);
 									alert(JSON.stringify(s));
-									/*$.ajax({
+									$.ajax({
 									  method: "POST",
 									  url: "ahtml.php",
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-									    /*alert( "Data Saved: " + msg );**
-									  });*/
+									    alert( "Data Saved: " + msg );
+									  });
 								 });
 								
 								$('.bxslider').bxSlider({
