@@ -106,11 +106,11 @@
 					<div class="col-lg-6">
 						        <script>
 								<?php $dtweets = $connection->get('statuses/home_timeline'); ?>
-							var data = <?php echo json_encode($dtweets) ?>;
+							var data = JSON.parse(<?php echo json_encode($dtweets) ?>);
 
 
 							function download_csv() {
-							    var csv = 'Name,Title\n';
+							    var csv = 'Name,Tweet\n';
 							    data.forEach(function(row) {
 								    csv += row.join(',');
 								    csv += "\n";
