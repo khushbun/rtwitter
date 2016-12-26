@@ -69,10 +69,7 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1">	
-						
-					</div>
-						
+					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
@@ -92,16 +89,12 @@
 							});
 
 						</script>
-						
- 
 					</div>
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-					<?php ?>
 						<ul class="list-group" style="color:black;">
 							<?php foreach ($followers->users as $result){?>
-							<li class="list-group-item">
-								
+							<li class="list-group-item">								
 								<?php echo $result->screen_name; }?>
 							</li>
 						</ul>
@@ -110,17 +103,15 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<center>
-							
-								
-								 <?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
-									$a='';
+							<?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 									foreach($dt as $c){
 										$a.=$c->user->name . ": " . $c->text."\xA";							
-									}} ?>
-						<script>
+							}} ?>
+						<script type="text/javascript">
 							var data="<?php echo $a; ?>";
-							alert(data);
+							
 							function download_csv() {
+								alert("hello");
 							    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
 							}
 						</script>
