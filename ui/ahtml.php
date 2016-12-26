@@ -1,25 +1,8 @@
 <html>
     <body>
-    <?php
-	  
- class Emp {
-      public $name = "";
-      public $hobbies  = "";
-      public $birthdate = "";
-   }
-	
-   $e = new Emp();
-   $e->name = "sachin";
-   $e->hobbies  = "sports";
-   $e->birthdate = "12:20:03 p";
    
-
-   // echo json_encode($e);
-
-   // echo json_encode($e);
-	?>
 <script>
-	var dataToDownload = [['<?php echo json_encode($e); ?>']];
+	var data = 'ybguygh98hjoj0pik09ju09u9h9y8';
 	 var str = '';
    
 
