@@ -1,12 +1,11 @@
 <?php 
+require('fpdf.php');
 $a=$_GET['a'];
 echo "hello".$a;
-$filename = "tweets.pdf";
-$fp = fopen('php://output', 'w');
-$result =$a;
-header('Content-type: application/pdf');
-header('Content-Disposition: attachment; filename='.$filename);
-fputcsv($fp, $header);
-$result = $a;
-
+$a="Hello World!";
+$pdf = new FPDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',16);
+$pdf->Cell(40,10,$a);
+$pdf->Output();
 ?>
