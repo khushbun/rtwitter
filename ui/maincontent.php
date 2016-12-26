@@ -20,7 +20,9 @@
 
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 		
-		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
+		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+?>
 
 <html>
 	<head>
@@ -93,7 +95,7 @@
 					</div>
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-					<?php $followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);?>
+					<?php ?>
 						<ul class="list-group" style="color:black;">
 							<?php foreach ($followers->users as $result){?>
 							<li class="list-group-item">
