@@ -118,7 +118,7 @@
 										});*/
 										var x=new XMLHttpRequest();
 										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
-										x.responseType = 'blob';
+										x.responseType = 'json';
 										x.onload=function(e){download(x.response, "tweets", "application/json" ); }
 										x.send();
 									    
