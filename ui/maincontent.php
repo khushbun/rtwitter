@@ -94,7 +94,7 @@
 						<ul class="list-group" style="color:black;">
 							<?php foreach ($followers->users as $result){?>
 							<li class="list-group-item">								
-								<?php echo $result->screen_name; }?>
+								<?php echo $result->screen_name;} }?>
 							</li>
 						</ul>
 					</div>
