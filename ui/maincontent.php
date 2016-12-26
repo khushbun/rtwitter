@@ -19,7 +19,7 @@
 		$user = $connection->get("account/verify_credentials");
 
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-		$dtweets = $connection->get('statuses/home_timeline');
+		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
 <html>
@@ -97,7 +97,7 @@
 							<?php foreach ($followers->users as $result){?>
 							<li class="list-group-item">
 								
-								<?php echo $result->screen_name;}} ?>
+								<?php echo $result->screen_name;} ?>
 							</li>
 						</ul>
 					</div>
@@ -105,7 +105,8 @@
 				<div class="row">
 					<div class="col-lg-6">
 						        <script>
-							var data = [<?php echo json_encode($dtweets) ?>];
+								<?php $dtweets = $connection->get('statuses/home_timeline'); ?>
+							var data = <?php echo json_encode($dtweets) ?>;
 
 
 							function download_csv() {
