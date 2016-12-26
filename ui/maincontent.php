@@ -111,7 +111,7 @@
 						<center>
 							<script>
 								var data;
-								data = <?php echo json_encode($tweets);} ?>;
+								data = <?php echo json_encode($tweets->text);} ?>;
 								console.log(arr);
 								function download_csv() {
 								    var csv = 'Name,Title\n';
