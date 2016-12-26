@@ -99,7 +99,7 @@
 									$.ajax({
 									  method: "POST",
 									  url: "ahtml.php",
-									  data: { d: s }
+									  data: { d: JSON.stringify(s) }
 									})
 									  .done(function( msg ) {
 										/*$.fileDownload("Tweets.json").done(function(){
