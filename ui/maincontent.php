@@ -25,9 +25,7 @@
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
 				$temp = $c->user->name;
-				$d = array();
-			   	$d[sizeof($d)] =  $c->text;
-			   	$a[$temp] = $d;							
+			   	$a[$temp] = $c->text;							
 		}
 		$_SESSION['a']=$a;
 		$ex = "hello";
