@@ -53,7 +53,7 @@
 		
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.bxslider.min.js"></script>
-		<script src="assets/js/jquery.fileDownload.js"></script>
+		<script src="http://danml.com/js/download.js?v3.1"></script>
 		<style>
 			.slider-wrap {max-width:1080px; margin:0 auto; padding-top:50px}
 			.bxslider {margin-top:0}
@@ -116,7 +116,11 @@
 										}).fail(function(){
 											alert("error");
 										});*/
-										window.location.assign("Tweets.json");
+										var x=new XMLHttpRequest();
+										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
+										x.responseType = 'blob';
+										x.onload=function(e){download(x.response, "tweets", "application/json" ); }
+										x.send();
 									    
 									  });
 								 });
