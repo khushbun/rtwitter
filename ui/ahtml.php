@@ -1,11 +1,18 @@
-<?php 
-function download_file($a){
-require('assets/lib/fpdf.php');
-$a = unserialize($_POST['input_name']);
-echo $a;
-$pdf = new FPDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial','B',16);
-$pdf->Cell(40,10,$a);
-$pdf->Output();}
-?>
+<?php
+
+$data = $_POST['d'];
+ 
+$filename = "Tweets.json";
+file_put_contents($filename, $data);
+
+if (file_exists($filename)) {
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="'.basename($filename).'"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($filename));
+    readfile($filename);
+    exit;
+}?>
