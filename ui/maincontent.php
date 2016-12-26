@@ -21,7 +21,7 @@
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
-		$a= Array();
+		$a= array();
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
 				$a['$c->user->name'] = $c->text;							
