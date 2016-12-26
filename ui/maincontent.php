@@ -17,13 +17,15 @@
 		$access_token = $_SESSION['access_token'];
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		$user = $connection->get("account/verify_credentials");
-
-		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
-		
+		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
 		
-?>
+		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
+			foreach($dt as $c){
+				$a.=$c->user->name . ": " . $c->text."\xA";							
+		}
+		$_SESSION['a']=$a;?>
 
 <html>
 	<head>
@@ -43,23 +45,12 @@
 		</style>
 	</head>
 	<body style="background-color: black; color:#fff;">
-		<?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
-			foreach($dt as $c){
-				$a.=$c->user->name . ": " . $c->text."\xA";							
-			} ?>
-			<script type="text/javascript">
-				var data="<?php echo $a; ?>";
-
-				function download_csv() {
-					alert(data);
-				    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
-				}
-			</script>
-				<a href="javascript:download_csv();">Download</a>
 		<center>
 			<div class="container" style="padding-top:5%;">
 				<div class="row">
-					<div class="col-lg-3"></div>
+					<div class="col-lg-3">
+						<a  target="_blank"  href="https://rtwittertest.herokuapp.com/ui/ahtml.php">
+							download</a></div>
 					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
 
 				</div>
