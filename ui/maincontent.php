@@ -89,7 +89,7 @@
 						<script>
 
 							$(document).ready(function(){
-								$(document).on("click", "#click", funtion(){
+								$(document).on("click", "#click", function(){
 								       var a = "<?php echo $a; ?>";
 									alert(a);
 								 });
