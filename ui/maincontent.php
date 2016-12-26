@@ -91,7 +91,7 @@
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
 								        var s = "<?php echo $a; ?>";
-									alert(s);
+									alert(JSON.stringify(s));
 									$.ajax({
 									  method: "POST",
 									  url: "some.php",
