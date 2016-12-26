@@ -21,10 +21,10 @@
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
-		$a="";
+		$a= Array();
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
-				$a.=$c->user->name . ": " . $c->text."\xA";							
+				$a[$c->user->name] = $c->text;							
 		}
 		$_SESSION['a']=$a;
 		$ex = "hello";
@@ -90,8 +90,16 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								      
-									alert("<?php echo $a; ?>");
+								        var s = "<?php echo $a; ?>";
+									alert(s);
+									$.ajax({
+									  method: "POST",
+									  url: "some.php",
+									  data: { d: s }
+									})
+									  .done(function( msg ) {
+									    alert( "Data Saved: " + msg );
+									  });
 								 });
 								
 								$('.bxslider').bxSlider({
