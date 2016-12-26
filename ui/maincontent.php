@@ -26,7 +26,9 @@
 			foreach($dt as $c){
 				$a.=$c->user->name . ": " . $c->text."\xA";							
 		}
-		$_SESSION['a']=$a;?>
+		$_SESSION['a']=$a;
+		$ex = "hello";
+?>
 
 <html>
 	<head>
@@ -87,6 +89,8 @@
 						<script>
 
 							$(document).ready(function(){
+								var a = "<?php echo $ex; ?>";
+								alert(a);
 								$('.bxslider').bxSlider({
 									mode: 'fade',
 									controls: false,
