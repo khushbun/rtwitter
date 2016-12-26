@@ -90,8 +90,8 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								       var a = "<?php echo $a; ?>";
-									alert(a);
+								      
+									alert("<?php echo $a; ?>");
 								 });
 								
 								$('.bxslider').bxSlider({
