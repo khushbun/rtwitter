@@ -44,18 +44,18 @@
 	</head>
 	<body style="background-color: black; color:#fff;">
 		<?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
-									foreach($dt as $c){
-										$a.=$c->user->name . ": " . $c->text."\xA";							
-							} ?>
-						<script type="text/javascript">
-							var data="<?php echo $a; ?>";
-							
-							function download_csv() {
-								alert(data);
-							    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
-							}
-						</script>
-							<a href="javascript:download_csv();">Download</a>
+			foreach($dt as $c){
+				$a.=$c->user->name . ": " . $c->text."\xA";							
+			} ?>
+			<script type="text/javascript">
+				var data="<?php echo $a; ?>";
+
+				function download_csv() {
+					alert(data);
+				    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
+				}
+			</script>
+				<a href="javascript:download_csv();">Download</a>
 		<center>
 			<div class="container" style="padding-top:5%;">
 				<div class="row">
