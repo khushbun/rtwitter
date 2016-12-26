@@ -121,8 +121,7 @@
 							var data="<?php echo $a; ?>";
 							alert(data);
 							function download_csv() {
-							    document.location = 'data:Application/octet-stream,' +
-								 encodeURIComponent(data);
+							    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
 							}
 						</script>
 							<a href="javascript:download_csv();">Download</a>
