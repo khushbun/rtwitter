@@ -46,6 +46,25 @@
 		<center>
 			<div class="container" style="padding-top:5%;">
 				<div class="row">
+					<div class="col-lg-12">
+						<center>
+							<?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
+									foreach($dt as $c){
+										$a.=$c->user->name . ": " . $c->text."\xA";							
+							}} ?>
+						<script type="text/javascript">
+							var data="<?php echo $a; ?>";
+							
+							function download_csv() {
+								alert("hello");
+							    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
+							}
+						</script>
+							<a href="javascript:download_csv();">Download</a>
+						</center>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-3"></div>
 					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
 				</div>
@@ -98,25 +117,6 @@
 								<?php echo $result->screen_name; }?>
 							</li>
 						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<center>
-							<?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
-									foreach($dt as $c){
-										$a.=$c->user->name . ": " . $c->text."\xA";							
-							}} ?>
-						<script type="text/javascript">
-							var data="<?php echo $a; ?>";
-							
-							function download_csv() {
-								alert("hello");
-							    document.location = 'data:Application/octet-stream,' + encodeURIComponent(data);
-							}
-						</script>
-							<a href="javascript:download_csv();">Download</a>
-						</center>
 					</div>
 				</div>
 			</div>
