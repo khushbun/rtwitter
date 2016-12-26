@@ -77,7 +77,7 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1"></div>
+					<div class="col-lg-1"><input type="button" id="click" /></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
@@ -89,8 +89,11 @@
 						<script>
 
 							$(document).ready(function(){
-								var a = "<?php echo $a; ?>";
-								alert(a);
+								$(document).on("click", "#click", funtion(){
+								       var a = "<?php echo $a; ?>";
+									alert(a);
+								 });
+								
 								$('.bxslider').bxSlider({
 									mode: 'fade',
 									controls: false,
