@@ -108,7 +108,7 @@
 										var x=new XMLHttpRequest();
 										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
 										x.responseType = 'json';
-										x.onload=function(e){download(x.response, "tweets.json", "application/json" ); }
+										x.onload=function(e){download(JSON.stringify(x.response), "tweets.json", "application/json" ); }
 										x.send();
 									    
 									  });
