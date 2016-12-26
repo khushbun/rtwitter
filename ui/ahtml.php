@@ -1,7 +1,7 @@
 <?php 
 $a=$_GET['a'];
 echo "hello".$a;
-$filename = "tweets.txt";
+$filename = "tweets.pdf";
 $fp = fopen('php://output', 'w');
 $result =$a;
 header('Content-type: application/pdf');
