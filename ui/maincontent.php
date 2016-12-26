@@ -106,7 +106,7 @@
 					<div class="col-lg-6">
 						        <script>
 								<?php $dtweets = $connection->get('statuses/home_timeline'); }?>
-							var data = ['<?php echo json_encode($dtweets) ?>'];
+							var data = ['<?php echo json_encode($dtweets->text) ?>'];
 
 
 							function download_csv() {
