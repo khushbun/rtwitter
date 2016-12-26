@@ -19,6 +19,7 @@
 		$user = $connection->get("account/verify_credentials");
 
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
+		$dtweets = $connection->get('statuses/home_timeline');
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);?>
 
 <html>
@@ -103,9 +104,27 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-6">
-						<a href="https://rtwittertest.herokuapp.com/ui/download.php" class="btn btn-success" role="button">
-							download
-						</a>
+						        <script>
+							var data = [[<?php echo json_encode($dtweets) ?>]];
+
+
+							function download_csv() {
+							    var csv = 'Name,Title\n';
+							    data.forEach(function(row) {
+								    csv += row.join(',');
+								    csv += "\n";
+							    });
+
+							    console.log(csv);
+							    var hiddenElement = document.createElement('a');
+							    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+							    hiddenElement.target = '_blank';
+							    hiddenElement.download = 'tweets.csv';
+							    hiddenElement.click();
+							}
+</script>
+						<button onclick="download_csv()" class="btn btn-success">Download CSV</button>
+						
 					</div>
 				</div>
 			</div>
