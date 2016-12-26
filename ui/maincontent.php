@@ -103,7 +103,7 @@
 
 							$(document).ready(function(){
 								$(document).on("click", "#click", function(){
-								        var s = <?php echo $a; ?>;
+								        var s = "<?php echo $a; ?>";
 									console.log(s);
 									//alert(JSON.stringify(s));
 									$.ajax({
