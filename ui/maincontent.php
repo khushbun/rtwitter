@@ -22,8 +22,7 @@
 		
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
-		$dt = json_decode($tweets);
-		echo $dt;
+		
 ?>
 
 <html>
@@ -112,9 +111,15 @@
 					<div class="col-lg-12">
 						<center>
 							<script>
-								var data;
-								data = <?php echo json_encode($tweets->text);} ?>;
-								console.log(arr);
+								
+								 <?php  $dt = $connection->get('statuses/home_timeline',["count" =>10]); 
+									$a='';
+									foreach($dt as $c){
+										$a.=$c->user->name . ": " . $c->text."\xA";							
+									}} ?>
+								
+								var data="<?php echo $a ?>";
+								console.log(data);
 								function download_csv() {
 								    var csv = 'Name,Title\n';
 								    data.forEach(function(row) {
