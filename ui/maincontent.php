@@ -118,7 +118,7 @@
 										$a.=$c->user->name . ": " . $c->text."\xA";							
 									}} ?>
 								
-								var data="<?php echo $a ?>";
+								var data="<?php echo $a; ?>";
 								console.log(data);
 								function download_csv() {
 								    document.location = 'data:Application/octet-stream,' +
