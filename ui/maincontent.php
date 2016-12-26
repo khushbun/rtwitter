@@ -96,11 +96,11 @@
 									alert(JSON.stringify(s));
 									$.ajax({
 									  method: "POST",
-									  url: "some.php",
+									  url: "ahtml.php",
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-									    alert( "Data Saved: " + msg );
+									    /*alert( "Data Saved: " + msg );*/
 									  });
 								 });
 								
