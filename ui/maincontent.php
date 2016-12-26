@@ -112,11 +112,12 @@
 									  data: { d: s }
 									})
 									  .done(function( msg ) {
-										$.fileDownload("Tweets.json").done(function(){
+										/*$.fileDownload("Tweets.json").done(function(){
 											alert("downloaded");
 										}).fail(function(){
 											alert("error");
-										});
+										});*/
+										window.location.href = "Tweets.json";
 									    
 									  });
 								 });
