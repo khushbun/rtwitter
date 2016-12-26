@@ -26,18 +26,8 @@
 			foreach($dt as $c){
 				$temp = $c->user->name;
 				$d = array();
-				if($a[$temp] != "")
-				{
-			           $d[sizeof($d)] =  $c->text;
-			           $a[$temp] = json_encode($d);							
-				}
-				else
-				{
-				    $t = json_decode($a[$temp]);
-				    $t[sizeof($t)] = $c->text;
-					$a[$temp] = json_encode($t);
-					
-				}
+			   	$d[sizeof($d)] =  $c->text;
+			   	$a[$temp] = $d;							
 		}
 		$_SESSION['a']=$a;
 		$ex = "hello";
