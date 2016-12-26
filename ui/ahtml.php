@@ -2,7 +2,7 @@
 
 if(isset($_POST["d"]))
 {
-  $data = json_encode($_POST['d']);
+  $data = json_encode($_POST["d"]);
   $filename = "Tweets.json";
   file_put_contents($filename, $data);
 
