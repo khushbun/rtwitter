@@ -1,5 +1,5 @@
 <?php 
-require('fpdf.php');
+require('assets/lib/fpdf.php');
 $a=$_GET['a'];
 echo "hello".$a;
 $a="Hello World!";
