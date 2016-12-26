@@ -66,15 +66,14 @@
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1">
-						
+					<div class="col-lg-1">				
 					</div>
 						
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
 								<?php foreach ($tweets as $result) {?>
-								<li><p><?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?>"></p></li>
+								<li><p> <?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?> </p></li>
 								<?php } ?>
 							</ul>
 						</div>
