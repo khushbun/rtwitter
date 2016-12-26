@@ -49,8 +49,11 @@
 			<div class="container" style="padding-top:5%;">
 				<div class="row">
 					<div class="col-lg-3">
-						<a  target="_blank" href="ahtml.php?a=<?php echo $a; ?>">
-							download</a></div>
+						<form action="https://rtwittertest.herokuapp.com/ui/ahtml.php" method="post">
+							<input type='hidden' name='input_name' value="<?php echo htmlentities(serialize($a));?>" />
+							<input type="submit">
+						</form>
+					</div>
 					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
 
 				</div>
