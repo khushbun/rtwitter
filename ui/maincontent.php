@@ -73,7 +73,7 @@
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-7">
-						<input type="text" id="txtAutoComplete1" class="form-control" list="languageList1"/><!--your input textbox-->
+						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/><!--your input textbox-->
 						<datalist id="languageList1">
 							<?php foreach($ajaxfollowers->users as $b){?>
 						<option value="<?php echo $b->screen_name;?>" /><?php }?>
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 				
-				<div class="row">
+				<div class="row" style="margin-top:5%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-4"><h4>10 recent Tweets</h4></div>
 					<div class="col-lg-1"></div>
