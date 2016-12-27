@@ -79,21 +79,25 @@
 						<option value="<?php echo $b->screen_name;?>" /><?php }?>
 						
 						</datalist>
-					</div>
-					<div class="col-lg-1"></div>
+					</div>	
+					<div class="col-lg-2">
 						<input type="button" id="click2" value="see follower" class="btn btn-success"/>
-					<div class="col-lg-2"></div>
-					
+					</div>
+					<div class="col-lg-2">
+						<input type="button" id="click" value="Download Tweets" class="btn btn-success"/>
+					</div>
 				</div>
 				
 				<div class="row">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-4"><h4>10 recent Tweets</h4></div>
+					<div class="col-lg-1"></div>
+					
 					<div class="col-lg-4"><h4>10 Followers</h4></div>
 					
 				</div>
 				<div class="row" >
-					<div class="col-lg-1"><input type="button" id="click" value="Download Tweets" class="btn btn-success"/></div>
+					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="slider-wrap">
 							<ul class="bxslider" style="color:black;">
