@@ -110,7 +110,7 @@
 									  data: { d: JSON.stringify(s)}
 									})
 									  .done(function( msg ) {
-										
+										alert(msg);
 										var x=new XMLHttpRequest();
 										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
 										x.responseType = 'json';
