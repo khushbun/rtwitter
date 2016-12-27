@@ -132,7 +132,7 @@
 										var f=<?php echo json_encode($fdata); ?>;
 										var sa = document.getElementById('txtAutoComplete1').value;
 										
-										alert("hello "+JSON.stringify(f[sa][0]['text']));
+										alert(f);
 									});
 								
 								$('.bxslider').bxSlider({
