@@ -81,7 +81,7 @@
 						</datalist>
 					</div>	
 					<div class="col-lg-2">
-						<input type="button" id="click2" value="see follower" class="btn btn-success"/>
+					<!--<input type="button" id="click2" value="see follower" class="btn btn-success"/> -->
 					</div>
 					<div class="col-lg-2">
 						<input type="button" id="click" value="Download Tweets" class="btn btn-success"/>
@@ -131,7 +131,8 @@
 									$(document).on("click", "#click2", function(){
 										var f=<?php echo json_encode($fdata); ?>;
 										var sa = document.getElementById('txtAutoComplete1').value;
-										alert(JSON.stringify(f[sa]));
+										
+										
 									});
 								
 								$('.bxslider').bxSlider({
