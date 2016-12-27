@@ -66,13 +66,13 @@
 					<div class="col-lg-1">
 						
 					</div>
-					<div class="col-lg-9"><h1>Welcome To See Tweets and Followers of Your Account</h1></div>
+					<div class="col-lg-11"><h1>Welcome To See Tweets and Followers of Your Account</h1></div>
 
 				</div>
 				
 				<div class="row" style="padding-top:1%;">
 					<div class="col-lg-1"></div>
-					<div class="col-lg-7">
+					<div class="col-lg-9">
 						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/><!--your input textbox-->
 						<datalist id="languageList1">
 							<?php foreach($ajaxfollowers->users as $b){?>
@@ -88,15 +88,8 @@
 					</div>
 				</div>
 				
-				<div class="row" style="margin-top:2%;">
-					<div class="col-lg-1"></div>
-					<div class="col-lg-4"><h4>10 recent Tweets</h4></div>
-					<div class="col-lg-1"></div>
-					
-					<div class="col-lg-4"><h4>10 Followers</h4></div>
-					
-				</div>
-				<div class="row" style=" padding-top: 2%;">
+				
+				<div class="row" style=" padding-top: 1%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="">
