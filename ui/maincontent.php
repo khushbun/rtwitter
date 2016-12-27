@@ -63,9 +63,7 @@
 		<center>
 			<div class="container" style="padding-top:1%; padding-bottom: 8%;">
 				<div class="row">
-					<div class="col-lg-1">
-						
-					</div>
+					<div class="col-lg-1"></div>
 					<div class="col-lg-11"><h1>Welcome To See Tweets and Followers of Your Account</h1></div>
 
 				</div>
