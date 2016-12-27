@@ -123,9 +123,17 @@
 								$(document).on("click", "#click2", function(){
 									var f=<?php echo json_encode($fdata); ?>;
 								        var sa = document.getElementById('txtAutoComplete1').value;
-									 
+									 var ww=document.getElementById('txtAutoComplete1');
 									console.log(f);
-									alert(JSON.stringify(f[sa][0]['text']));
+									//alert(JSON.stringify(f[sa][0]['text']));
+									w = "<h1>"+sa+"</h1><table>";
+									for(var i=0;i<10;i++){
+										if(f[sa][i]['text']){
+											w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
+										}
+									}
+									w=w+"</table>";
+									ww.innerhtml = w;
 									 
 								 });
 								
