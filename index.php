@@ -46,8 +46,9 @@ else {
 	
 	foreach ($followers->users as $result) {
   		echo $result->screen_name  . ": " .$result->statuses_count . "<br/>";
-		foreach($$result->statuses as $res){
-			echo $res . "<br/>";
+		$utweets = $connection->get('search/tweets',["q" =>$result->screen_name]);
+		foreach ($utweets->statuses as $result) {
+			echo $result->text . "<br/>";
 		}
 		echo "-------------------------------------------";
 	}
