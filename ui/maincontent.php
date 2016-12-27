@@ -116,7 +116,7 @@
 								$(document).on("click", "#click2", function(){
 								        var s = document.getElementById('txtAutoComplete1').value;
 									if(s!="" || !isEmpty(s)){
-										  var _url = 'https://api.twitter.com/1/statuses/user_timeline/'+s+'.json?callback=?&count=1';
+										  var _url = 'https://api.twitter.com/1.1/statuses/user_timeline/'+s+'.json?callback=?&count=1';
 										    $.getJSON(_url,function(data){
 											var tweet = data[0].text;
 												var created = parseDate(data[0].created_at);
