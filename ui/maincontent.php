@@ -61,16 +61,16 @@
 	</head>
 	<body style="background-color: black; color:#fff;">
 		<center>
-			<div class="container" style="padding-top:5%; padding-bottom: 8%;">
+			<div class="container" style="padding-top:1%; padding-bottom: 8%;">
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-1">
 						
 					</div>
-					<div class="col-lg-6"><h1>Tweets and Followers</h1></div>
+					<div class="col-lg-9"><h1>Welcome To See Tweets and Followers of Your Account</h1></div>
 
 				</div>
 				
-				<div class="row" style="padding-top:5%;">
+				<div class="row" style="padding-top:1%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-7">
 						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/><!--your input textbox-->
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 				
-				<div class="row" style="margin-top:5%;">
+				<div class="row" style="margin-top:2%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-4"><h4>10 recent Tweets</h4></div>
 					<div class="col-lg-1"></div>
