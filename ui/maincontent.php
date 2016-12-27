@@ -108,14 +108,7 @@
 									  type: "POST",
 									  url: "ahtml.php",
 									  data: { d: JSON.stringify(s)},
-									  success:function(msg){
-										alert("response");
-									  	alert(msg);
-										var f=<?php echo json_encode($fdata); ?>;
-										alert(f);
-									  }
-									});
-									  /*.done(function( msg ) {
+									}).done(function( msg ) {
 										alert(msg);
 										var x=new XMLHttpRequest();
 										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
@@ -123,7 +116,7 @@
 										x.onload=function(e){download(JSON.stringify(x.response), "tweets.json", "application/json" ); }
 										x.send();
 									    
-									  });*/
+									  });
 								 });
 									$(document).on("click", "#click2", function(){
 										var f=<?php echo json_encode($fdata); ?>;
