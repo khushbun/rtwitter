@@ -28,7 +28,18 @@
 			   	$a[$temp] = $c->text;							
 		}
 		$_SESSION['a']=$a;
-		$ex = "hello";
+		$followerd = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+		$fdata= array();
+		
+		foreach ($followerd->users as $result) {
+			$utweets = $connection->get('search/tweets',["q" =>$result->screen_name]);
+			$i=0;
+			foreach ($utweets->statuses as $res) {
+				$fdata[$result->screen_name][$i]=$res;
+				$i++;
+				}
+		}
+
 ?>
 
 <html>
@@ -100,11 +111,7 @@
 									  data: { d: JSON.stringify(s)}
 									})
 									  .done(function( msg ) {
-										/*$.fileDownload("Tweets.json").done(function(){
-											alert("downloaded");
-										}).fail(function(){
-											alert("error");
-										});*/
+										
 										var x=new XMLHttpRequest();
 										x.open("GET", "https://rtwittertest.herokuapp.com/ui/Tweets.json", true);
 										x.responseType = 'json';
@@ -114,15 +121,11 @@
 									  });
 								 });
 								$(document).on("click", "#click2", function(){
-								        var s = document.getElementById('txtAutoComplete1').value;
-									if(s!="" || !isEmpty(s)){
-										  var _url = 'https://api.twitter.com/1.1/followers/list.json?cursor=-1&screen_name=sweet_khushbu_n&include_user_entities=false';
-										    $.getJSON(_url,function(data){
-											//var tweet = data[users['screen_name']].text;
-												//tweet = tweet.parseURL().parseUsername().parseHashtag();
-												alert(data);
-										    });
-									}
+									var f=<?php echo json_encode($a); ?>;
+								        var sa = document.getElementById('txtAutoComplete1').value;
+									 
+									console.log(f);
+									alert(JSON.stringify(f));
 									 
 								 });
 								
