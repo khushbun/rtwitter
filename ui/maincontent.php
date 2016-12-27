@@ -126,8 +126,9 @@
 									 var ww=document.getElementById('txtAutoComplete1');
 									console.log(f);
 									//alert(JSON.stringify(f[sa][0]['text']));
+									f=JSON.stringify(f[sa][0]['text']);
 									w = "<h1>"+sa+"</h1><table>";
-									for(var i=0;i<10;i++){
+									for(i=0;i<10;i++){
 										if(f[sa][i]['text']){
 											w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
 										}
