@@ -72,7 +72,7 @@
 				
 				<div class="row" style="padding-top:5%;">
 					<div class="col-lg-1"></div>
-					<div class="col-lg-10">
+					<div class="col-lg-7">
 						<input type="text" id="txtAutoComplete1" class="form-control" list="languageList1"/><!--your input textbox-->
 						<datalist id="languageList1">
 							<?php foreach($ajaxfollowers->users as $b){?>
@@ -80,6 +80,10 @@
 						
 						</datalist>
 					</div>
+					<div class="col-lg-1"></div>
+						<input type="button" id="click2" value="see follower" class="btn btn-success"/>
+					<div class="col-lg-2"></div>
+					
 				</div>
 				
 				<div class="row">
@@ -104,7 +108,7 @@
 								$(document).on("click", "#click", function(){
 								        var s = <?php echo json_encode($a); ?>;
 									console.log(s);
-									alert(JSON.stringify(s));
+									alert("Wait Few seconds file will be downloaded!!!!!");
 									$.ajax({
 									  method: "POST",
 									  url: "ahtml.php",
@@ -135,7 +139,7 @@
 
 						</script>
 					</div>
-					<div class="col-lg-1"><input type="button" id="click2" value="see follower" class="btn btn-success"/></div>
+					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<ul class="list-group" style="color:black;">
 							<?php foreach ($followers->users as $result){?>
