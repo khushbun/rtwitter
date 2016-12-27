@@ -96,10 +96,10 @@
 					<div class="col-lg-4"><h4>10 Followers</h4></div>
 					
 				</div>
-				<div class="row" >
+				<div class="row" style=" margin top: 2; margin-bottom: 8%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-						<div class="slider-wrap">
+						<div class="">
 							<ul class="bxslider" style="color:black;">
 								<?php foreach ($tweets as $result) {?>
 								<li><p> <?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?> </p></li>
