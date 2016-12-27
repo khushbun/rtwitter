@@ -114,7 +114,7 @@
 									  });
 								 });
 								$(document).on("click", "#click2", function(){
-								        var s = document.getElementById('txtAutoComplete1');
+								        var s = document.getElementById('languageList1').value;
 									alert(s);
 									 
 								 });
