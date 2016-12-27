@@ -126,11 +126,11 @@
 									 var ww=document.getElementById('fdata');
 									console.log(f);
 									//alert(JSON.stringify(f[sa][0]['text']));
-									f=JSON.stringify(f[sa][0]['text']);
+									f=JSON.stringify(f);
 									//w = "<h1>"+sa+"</h1><table>";
 									var v;
 									for(i=0;i<10;i++){
-										if(f[sa][i]['text']){
+										if(f[sa][i]){
 											v = v+ f[sa][i]['text'];
 											//w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
 										}
