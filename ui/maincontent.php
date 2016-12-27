@@ -130,10 +130,10 @@
 									//w = "<h1>"+sa+"</h1><table>";
 									var v;
 									for(i=0;i<10;i++){
-										if(f[sa][i]){
+										//if(f[sa][i]){
 											v = v+ f[sa][i]['text'];
 											//w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
-										}
+										//}
 									}
 									//w=w+"</table>";
 									alert(v);
