@@ -129,7 +129,7 @@
 									f=JSON.stringify(f);
 									//w = "<h1>"+sa+"</h1><table>";
 									
-											alert([sa][0]['text'];)
+											alert([sa][0]['text']);
 								
 									 });
 								
