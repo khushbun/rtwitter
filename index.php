@@ -40,6 +40,13 @@ else {
 	foreach ($followers->users as $result) {
   		echo $result->id . ": " . $result->screen_name . "<br/>";
 	}
+	
+	echo "Followers data full: <br/>";	
+	$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+	
+	foreach ($followers->users as $result) {
+  		echo $result . "<br/>";
+	}
 
 
 	echo "done";
