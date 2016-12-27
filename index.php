@@ -42,15 +42,15 @@ else {
 	}
 	
 	echo "Followers data full: <br/>";	
-	$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+	$followerd = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 	
-	foreach ($followers->users as $result) {
+	foreach ($followerd->users as $result) {
   		echo $result->screen_name  . ": " .$result->statuses_count . "<br/>";
 		$utweets = $connection->get('search/tweets',["q" =>$result->screen_name]);
 		foreach ($utweets->statuses as $result) {
 			echo $result->text . "<br/>";
 		}
-		echo "-------------------------------------------";
+		
 	}
 
 
