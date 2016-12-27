@@ -111,6 +111,8 @@
 									  success:function(msg){
 										alert("response");
 									  	alert(msg);
+										var f=<?php echo json_encode($fdata); ?>;
+										alert(f);
 									  }
 									});
 									  /*.done(function( msg ) {
