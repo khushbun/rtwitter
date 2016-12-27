@@ -115,7 +115,16 @@
 								 });
 								$(document).on("click", "#click2", function(){
 								        var s = document.getElementById('txtAutoComplete1').value;
-									alert(s);
+									if(s!="" || !isEmpty(s)){
+										  var _url = 'https://api.twitter.com/1/statuses/user_timeline/'+s+'.json?callback=?&count=1';
+										    $.getJSON(_url,function(data){
+											var tweet = data[0].text;
+												var created = parseDate(data[0].created_at);
+												var createdDate = created.getDate()+'-'+(created.getMonth()+1)+'-'+created.getFullYear()+' at '+created.getHours()+':'+created.getMinutes();
+												//tweet = tweet.parseURL().parseUsername().parseHashtag();
+												alert(tweet);
+										    });
+									}
 									 
 								 });
 								
@@ -136,6 +145,14 @@
 								<?php echo $result->screen_name;} }?>
 							</li>
 						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-1">
+					</div>
+					<div class="col-lg-6">
+						<div id="fdata">
+						</div>
 					</div>
 				</div>
 			</div>
