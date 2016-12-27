@@ -123,7 +123,7 @@
 								$(document).on("click", "#click2", function(){
 									var f=<?php echo json_encode($fdata); ?>;
 								        var sa = document.getElementById('txtAutoComplete1').value;
-									 var ww=document.getElementById('txtAutoComplete1');
+									 var ww=document.getElementById('fdata');
 									console.log(f);
 									//alert(JSON.stringify(f[sa][0]['text']));
 									f=JSON.stringify(f[sa][0]['text']);
@@ -134,6 +134,7 @@
 										}
 									}
 									w=w+"</table>";
+									alert(w);
 									ww.innerhtml = w;
 									 
 								 });
@@ -161,7 +162,7 @@
 					<div class="col-lg-1">
 					</div>
 					<div class="col-lg-6">
-						<div id="fdata">
+						<div id="fdata" style="color:white;">
 						</div>
 					</div>
 				</div>
