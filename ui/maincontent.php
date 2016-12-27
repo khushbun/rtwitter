@@ -61,7 +61,7 @@
 	</head>
 	<body style="background-color: black; color:#fff;">
 		<center>
-			<div class="container" style="padding-top:5%;">
+			<div class="container" style="padding-top:5%; padding-bottom: 8%;">
 				<div class="row">
 					<div class="col-lg-3">
 						
@@ -96,7 +96,7 @@
 					<div class="col-lg-4"><h4>10 Followers</h4></div>
 					
 				</div>
-				<div class="row" style=" margin top: 2; margin-bottom: 8%;">
+				<div class="row" style=" padding-top: 2%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="">
