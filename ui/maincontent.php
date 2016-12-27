@@ -129,10 +129,10 @@
 									  });
 								 });
 									$(document).on("click", "#click2", function(){
-										var f=<?php echo json_encode($fdata); ?>;
+// 										var f=<?php //echo json_encode($fdata); ?>;
 										var sa = document.getElementById('txtAutoComplete1').value;
 										
-										alert(JSON.stringify(f[sa][0]['text']));
+										alert("hello "+sa);
 									});
 								
 								$('.bxslider').bxSlider({
