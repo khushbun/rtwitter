@@ -131,8 +131,6 @@
 									$(document).on("click", "#click2", function(){
 										var f=<?php echo json_encode($fdata); ?>;
 										var sa = document.getElementById('txtAutoComplete1').value;
-										
-										alert(f);
 									});
 								
 								$('.bxslider').bxSlider({
