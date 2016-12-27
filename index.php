@@ -45,7 +45,7 @@ else {
 	$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 	
 	foreach ($followers->users as $result) {
-  		echo $result->screen_name  . ": " .$result->statuses_count . "<br/>";
+  		echo $result->screen_name  . ": " .$result->statuses . "<br/>";
 	}
 
 
