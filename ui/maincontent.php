@@ -127,15 +127,17 @@
 									console.log(f);
 									//alert(JSON.stringify(f[sa][0]['text']));
 									f=JSON.stringify(f[sa][0]['text']);
-									w = "<h1>"+sa+"</h1><table>";
+									//w = "<h1>"+sa+"</h1><table>";
+									var v;
 									for(i=0;i<10;i++){
 										if(f[sa][i]['text']){
-											w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
+											v = v+ f[sa][i]['text'];
+											//w=w+"<tr><td>"+f[sa][i]['text']+"</td></tr>";
 										}
 									}
-									w=w+"</table>";
-									alert(w);
-									ww.innerhtml = w;
+									//w=w+"</table>";
+									alert(v);
+									//ww.innerhtml = w;
 									 
 								 });
 								
