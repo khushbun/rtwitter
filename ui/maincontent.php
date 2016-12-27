@@ -125,7 +125,7 @@
 								        var sa = document.getElementById('txtAutoComplete1').value;
 									 
 									console.log(f);
-									alert(JSON.stringify(f['syesha_official'][0]['text']));
+									alert(JSON.stringify(f[sa][0]['text']));
 									 
 								 });
 								
