@@ -123,15 +123,7 @@
 								$(document).on("click", "#click2", function(){
 									var f=<?php echo json_encode($fdata); ?>;
 								        var sa = document.getElementById('txtAutoComplete1').value;
-									 var ww=document.getElementById('fdata');
-									console.log(f);
-									//alert(JSON.stringify(f[sa][0]['text']));
-									f=JSON.stringify(f);
-									//w = "<h1>"+sa+"</h1><table>";
-									
-											alert([sa][0]['text']);
-								
-									 });
+									console.log(f); });
 								
 								$('.bxslider').bxSlider({
 									mode: 'fade',
