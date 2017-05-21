@@ -6,6 +6,7 @@
 	define('CONSUMER_KEY', 'htjBgpI7OieRzufwsWwUA4lYU'); 
 	define('CONSUMER_SECRET', 'bsZ3rejBiBexaZC004TNBSDw7XHWXWZnuFeIeV7Ckvgza2niIb'); 
 	define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/ui/callback.php'); 
+
 	if (!isset($_SESSION['access_token'])) {
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
 		$request_token = $connection->oauth('oauth/request_token', array('oauth_callback' => OAUTH_CALLBACK));
@@ -18,9 +19,14 @@
 		$access_token = $_SESSION['access_token'];
 		$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		$user = $connection->get("account/verify_credentials");
-		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);		
+
+
+		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
+
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
+
 		$followers = $connection->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+
 		$a= array();
 		$dt = $connection->get('statuses/home_timeline',["count" =>10]); 
 			foreach($dt as $c){
@@ -28,6 +34,7 @@
 			   	$a[$temp] = $c->text;							
 		}
 		$_SESSION['a']=$a;
+
 		$followerd = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$fdata= array();
 		
@@ -77,12 +84,14 @@
 						<option value="<?php echo $b->screen_name;?>" /><?php }?>
 						
 						</datalist>
+
 					</div>	
 					<div class="col-lg-2">
 					<!--<input type="button" id="click2" value="see follower" class="btn btn-success"/> -->
 					</div>
 					<div class="col-lg-2">
 						<input type="button" id="click" value="Download Tweets" class="btn btn-success"/>
+						<input type="button" id="click" value="show Tweets" class="btn btn-success"/>
 					</div>
 				</div>
 				
