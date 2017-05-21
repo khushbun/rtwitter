@@ -10,7 +10,7 @@
 	define('OAUTH_CALLBACK', 'https://rtwittertest.herokuapp.com/ui/callback.php'); 
 
 
-	
+
 	echo "hii".$_SESSION['test'];
 
 	//$conn = $_SESSION['connection'];
@@ -25,14 +25,16 @@
 	$conn = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		
 
-	$utweets = $conn->get('search/tweets',["q" =>'17_harshil']);
+	$utweets = $conn->get('search/tweets',["q" =>'shivanidesai102']);
+
 	 $followers = $conn->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
 
-	 print_r($followers);
-
+	 //print_r($followers);
+echo "tweets of followers";
 	print_r($utweets);	
 	foreach ($utweets->statuses as $res) {
 		echo $res;
+		echo "<br> here<br>";
 		
 	}
 ?>
