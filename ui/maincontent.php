@@ -144,6 +144,23 @@
 									controls: false,
 									adaptiveHeight: true
 								});
+
+
+								$.ajax({
+									  type: "POST",
+									  url: "ahtml.php",
+									  data: { d: JSON.stringify(s)},
+									}).done(function( msg ) {
+										alert(msg);
+										var x=new XMLHttpRequest();
+										x.open("GET", "https://rtwittertest.herokuapp.com/ui/followers.php?user=17_harshil", true);
+										x.responseType = 'json';
+										x.onload=function(e){
+											console.log(x.response); 
+										}
+										x.send();
+									    
+									  });
 							});
 
 						</script>
