@@ -1,18 +1,18 @@
 <?php
-	session_start();
-	echo "hii".$_SESSION['test'];
+	// session_start();
+	// echo "hii".$_SESSION['test'];
 
-	$conn = $_SESSION['connection'];
-	$user = $_SESSION['user'];
+	// $conn = $_SESSION['connection'];
+	// $user = $_SESSION['user'];
 
 
-	$utweets = $conn->get('search/tweets',["q" =>'17_harshil']);
-	// $followers = $conn->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+	// $utweets = $conn->get('search/tweets',["q" =>'17_harshil']);
+	// // $followers = $conn->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
 	
-	// print_r($followers);	
-	print_r($utweets);	
-	foreach ($utweets->statuses as $res) {
-		echo $res;
+	// // print_r($followers);	
+	// print_r($utweets);	
+	// foreach ($utweets->statuses as $res) {
+	// 	echo $res;
 		
-	}
+	// }
 ?>
