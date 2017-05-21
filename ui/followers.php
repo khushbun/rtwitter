@@ -25,16 +25,16 @@
 	$conn = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		
 
-	$utweets = $conn->get('search/tweets',["q" =>'dkhanani96']);
+	//$utweets = $conn->get('search/tweets',["q" =>'dkhanani96']);
 
-	 $followers = $conn->get('followers/list',["screen_name" =>$user->screen_name, "count"=>10]);
+	 $followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
-	 //print_r($followers);
-echo "tweets of followers";
-	print_r($utweets);	
-	foreach ($utweets->statuses as $res) {
-		echo $res;
-		echo "<br> here<br>";
+	print_r($followers);
+// echo "tweets of followers";
+// 	print_r($utweets);	
+// 	foreach ($utweets->statuses as $res) {
+// 		echo $res;
+// 		echo "<br> here<br>";
 		
-	}
+// 	}
 ?>
