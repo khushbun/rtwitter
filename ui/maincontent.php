@@ -167,8 +167,13 @@
 										str+="</ul>";
 										$('.jq-tweets').html(str);
 										
-									    
+									    $('.bxslider').bxSlider({
+											mode: 'fade',
+											controls: false,
+											adaptiveHeight: true
+										});
 									  });
+									
 							});
 
 						</script>
