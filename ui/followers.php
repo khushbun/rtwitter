@@ -26,16 +26,16 @@
 		
 
 	$utweets = $conn->get('statuses/user_timeline',["screen_name" =>'17_harshil','count' => '10']);
-	print_r($utweets);
+	// print_r($utweets);
 
 	 // $followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
 	// print_r($followers);
 // echo "tweets of followers";
 // 	print_r($utweets);	
-// 	foreach ($utweets->statuses as $res) {
-// 		echo $res;
-// 		echo "<br> here<br>";
+	foreach ($utweets as $res) {
+		echo $res->text;
+		echo "<br> here<br>";
 		
-// 	}
+	}
 ?>
