@@ -25,7 +25,7 @@
 	$conn = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		
 
-	$utweets = $conn->get('statuses/user_timeline',["screen_name" =>'dkhanani96']);
+	$utweets = $conn->get('statuses/user_timeline',["screen_name" =>'17_harshil','count' => '10']);
 	print_r($utweets);
 
 	 // $followers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
