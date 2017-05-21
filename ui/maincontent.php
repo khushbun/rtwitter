@@ -161,7 +161,7 @@
 										str+="<li><p>";
 										str+=value;
 										str+="</p></li>";
-
+										console.log('str', str);
 										  
 										});
 										$('.jq-tweets').html(str);
