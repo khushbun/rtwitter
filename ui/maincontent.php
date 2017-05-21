@@ -104,8 +104,8 @@
 				<div class="row" style=" padding-top: 1%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
-						<div class="">
-							<ul class="bxslider jq-tweets" style="color:black;">
+						<div class="jq-tweets">
+							<ul class="bxslider " style="color:black;">
 								<?php foreach ($tweets as $result) {?>
 								<li><p> <?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?> </p></li>
 								<?php } ?>
@@ -154,7 +154,7 @@
 										
 										console.log(msg); 				
 										tweets = JSON.parse(msg);		
-										str='';	
+										str='<ul class="bxslider " style="color:black;">';	
 										$.each( tweets, function( key, value ) 
 										{
 										console.log(value); 
@@ -164,7 +164,8 @@
 										console.log(str);
 										  
 										});
-									//	$('.jq-tweets').html(str);
+										str+="</ul>";
+										$('.jq-tweets').html(str);
 										
 									    
 									  });
