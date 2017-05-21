@@ -105,7 +105,7 @@
 					<div class="col-lg-1"></div>
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="">
-							<ul class="bxslider" style="color:black;">
+							<ul class="bxslider jq-tweets" style="color:black;">
 								<?php foreach ($tweets as $result) {?>
 								<li><p> <?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?> </p></li>
 								<?php } ?>
@@ -151,9 +151,20 @@
 									  url: "followers.php",
 									  data: { user: '17_harshil'},
 									}).done(function( msg ) {
-										alert(msg);
 										
-										console.log(msg); 									
+										console.log(msg); 				
+										tweets = JSON.parse(msg);		
+										str='';	
+										$.each( tweets, function( key, value ) 
+										{
+										console.log(value); 
+										str+="<li><p>";
+										str+=value;
+										str+="</p></li>";
+
+										  
+										});
+										$('.jq-tweets').html(str);
 										
 									    
 									  });
