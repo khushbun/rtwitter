@@ -37,6 +37,8 @@
 
 		$followerd = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 		$fdata= array();
+
+		$_SESSION['test'] = "hello";
 		
 		foreach ($followerd->users as $result) {
 			$utweets = $connection->get('search/tweets',["q" =>$result->screen_name]);
