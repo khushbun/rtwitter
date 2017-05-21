@@ -161,10 +161,10 @@
 										str+="<li><p>";
 										str+=value;
 										str+="</p></li>";
-										console.log('str', str);
+										console.log(str);
 										  
 										});
-										$('.jq-tweets').html(str);
+									//	$('.jq-tweets').html(str);
 										
 									    
 									  });
