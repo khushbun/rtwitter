@@ -5,7 +5,7 @@ require 'vendor/autoload.php';
 
 
 // HXrV31w86cO2LGDjI-LeDfvt == clientsecret
-echo "hii";
+// echo "hii";
 $fileMetadata = new Google_Service_Drive_DriveFile(array(
   'name' => 'My Report',
   'mimeType' => 'application/vnd.google-apps.spreadsheet'));
@@ -15,7 +15,7 @@ $file = $driveService->files->create($fileMetadata, array(
   'mimeType' => 'text/csv',
   'uploadType' => 'multipart',
   'fields' => 'id'));
-printf("File ID: %s\n", $file->id);
+// printf("File ID: %s\n", $file->id);
 
 ?>
 
