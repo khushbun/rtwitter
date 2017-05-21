@@ -22,7 +22,7 @@
 
 		$user = $connection->get("account/verify_credentials");
 
-		// $_SESSION['user'] = $user;
+		$_SESSION['user'] = $user;
 
 		$tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 
