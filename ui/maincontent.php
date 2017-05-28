@@ -155,12 +155,12 @@
 									
 							});
 							$('#test').click(function() {
-										var username = document.getElementById(txt1);
+										var username = $("input[id=txt1]").val();
 										alert("test"+username);
 									});
 
 								$('#showtweets').click(function() {
-									var username = document.getElementById(txtAutoComplete1);
+									var username = $("input[id=txtAutoComplete1]").val();
 										alert("username"+username);
 
 
