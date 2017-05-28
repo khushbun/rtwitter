@@ -151,7 +151,7 @@
 								$(document).on("click", "#showtweets", function(){
 									var username = document.getElementById(showtweets);
 
-									if(username==''){
+									if(username=='' || username!=null){
 										alert("Please select a follower");
 									}
 
@@ -159,7 +159,7 @@
 										$.ajax({
 										  type: "POST",
 										  url: "followers.php",
-										  data: { user: '17_harshil'},
+										  data: { user: username},
 										}).done(function( msg ) {
 											
 											console.log(msg); 				

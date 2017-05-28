@@ -15,7 +15,7 @@
 	$conn = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 		
 
-	$utweets = $conn->get('statuses/user_timeline',["screen_name" =>'17_harshil','count' => '10']);
+	$utweets = $conn->get('statuses/user_timeline',["screen_name" =>$_POST["user"],'count' => '10']);
 		
 	$temp = [];
 	foreach ($utweets as $res) {
