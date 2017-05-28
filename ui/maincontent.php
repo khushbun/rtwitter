@@ -83,6 +83,7 @@
 				<div class="row" style="padding-top:1%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-9">
+						<input type="text" id="txt1" />
 
 						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/>
 
@@ -100,6 +101,7 @@
 					<div class="col-lg-2">
 						<input type="button" id="click" value="Download Tweets" class="btn btn-success"/>
 						<input type="button" id="showtweets" value="show Tweets" class="btn btn-success"/>
+						<input type="button" id="test" value="Test" class="btn btn-success"/>
 					</div>
 				</div>
 				
@@ -147,6 +149,10 @@
 									controls: false,
 									adaptiveHeight: true
 								});
+								$(document).on("click", "#test", function(){
+										var username = document.getElementById(txt1);
+										alert("test"+username);
+									});
 
 								$(document).on("click", "#showtweets", function(){
 									var username = document.getElementById(txtAutoComplete1);
