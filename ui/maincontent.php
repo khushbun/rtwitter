@@ -154,12 +154,12 @@
 								
 									
 							});
-							$(document).on("click", "#test", function(){
+							$('#test').click(function() {
 										var username = document.getElementById(txt1);
 										alert("test"+username);
 									});
 
-								$(document).on("click", "#showtweets", function(){
+								$('#showtweets').click(function() {
 									var username = document.getElementById(txtAutoComplete1);
 										alert("username"+username);
 
@@ -198,7 +198,7 @@
 									// 	  });
 									// }
 										
-								});
+								};
 
 						</script>
 					</div>
