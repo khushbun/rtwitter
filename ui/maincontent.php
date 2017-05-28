@@ -149,7 +149,12 @@
 									controls: false,
 									adaptiveHeight: true
 								});
-								$(document).on("click", "#test", function(){
+								
+
+								
+									
+							});
+							$(document).on("click", "#test", function(){
 										var username = document.getElementById(txt1);
 										alert("test"+username);
 									});
@@ -194,10 +199,6 @@
 									// }
 										
 								});
-
-								
-									
-							});
 
 						</script>
 					</div>
