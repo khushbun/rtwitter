@@ -148,7 +148,7 @@
 									adaptiveHeight: true
 								});
 
-								$(document).on("click", "#showtweets", function(){
+								$(document).on("click", "#txtAutoComplete1", function(){
 									var username = document.getElementById(showtweets);
 										alert("username"+username);
 
