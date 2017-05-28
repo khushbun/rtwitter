@@ -148,12 +148,12 @@
 									adaptiveHeight: true
 								});
 
-								$(document).on("click", "#txtAutoComplete1", function(){
-									var username = document.getElementById(showtweets);
+								$(document).on("click", "#showtweets", function(){
+									var username = document.getElementById(txtAutoComplete1);
 										alert("username"+username);
 
 
-									if(username=='' || username!=null){
+									if(username=='' || username==null){
 										alert("Please select a follower");
 									}
 
