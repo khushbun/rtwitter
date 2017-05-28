@@ -168,35 +168,35 @@
 										alert("Please select a follower");
 									}
 
-									// else{
-									// 	$.ajax({
-									// 	  type: "POST",
-									// 	  url: "followers.php",
-									// 	  data: { user: username},
-									// 	}).done(function( msg ) {
+									else{
+										$.ajax({
+										  type: "POST",
+										  url: "followers.php",
+										  data: { user: username},
+										}).done(function( msg ) {
 											
-									// 		console.log(msg); 				
-									// 		tweets = JSON.parse(msg);		
-									// 		str='<ul class="bxslider " style="color:black;">';	
-									// 		$.each( tweets, function( key, value ) 
-									// 		{
-									// 		console.log(value); 
-									// 		str+="<li><p>";
-									// 		str+=value;
-									// 		str+="</p></li>";
-									// 		console.log(str);
+											console.log(msg); 				
+											tweets = JSON.parse(msg);		
+											str='<ul class="bxslider " style="color:black;">';	
+											$.each( tweets, function( key, value ) 
+											{
+											console.log(value); 
+											str+="<li><p>";
+											str+=value;
+											str+="</p></li>";
+											console.log(str);
 											  
-									// 		});
-									// 		str+="</ul>";
-									// 		$('.jq-tweets').html(str);
+											});
+											str+="</ul>";
+											$('.jq-tweets').html(str);
 											
-									// 	    $('.bxslider').bxSlider({
-									// 			mode: 'fade',
-									// 			controls: false,
-									// 			adaptiveHeight: true
-									// 		});
-									// 	  });
-									// }
+										    $('.bxslider').bxSlider({
+												mode: 'fade',
+												controls: false,
+												adaptiveHeight: true
+											});
+										  });
+									}
 										
 								});
 
