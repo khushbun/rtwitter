@@ -83,10 +83,13 @@
 				<div class="row" style="padding-top:1%;">
 					<div class="col-lg-1"></div>
 					<div class="col-lg-9">
-						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/><!--your input textbox-->
+
+						<input type="text" id="txtAutoComplete1" class="form-control" placeholder="Autocomplete Followers search box" list="languageList1"/>
+
 						<datalist id="languageList1">
 							<?php foreach($ajaxfollowers->users as $b){?>
-						<option value="<?php echo $b->screen_name;?>" /><?php }?>
+								<option value="<?php echo $b->screen_name;?>" />
+							<?php }?>
 						
 						</datalist>
 
@@ -96,7 +99,7 @@
 					</div>
 					<div class="col-lg-2">
 						<input type="button" id="click" value="Download Tweets" class="btn btn-success"/>
-						<input type="button" id="click" value="show Tweets" class="btn btn-success"/>
+						<input type="button" id="showtweets" value="show Tweets" class="btn btn-success"/>
 					</div>
 				</div>
 				
@@ -145,34 +148,46 @@
 									adaptiveHeight: true
 								});
 
+								$(document).on("click", "#showtweets", function(){
+									var username = document.getElementById(showtweets);
 
-								$.ajax({
-									  type: "POST",
-									  url: "followers.php",
-									  data: { user: '17_harshil'},
-									}).done(function( msg ) {
+									if(username==''){
+										alert("Please select a follower");
+									}
+
+									else{
+										$.ajax({
+										  type: "POST",
+										  url: "followers.php",
+										  data: { user: '17_harshil'},
+										}).done(function( msg ) {
+											
+											console.log(msg); 				
+											tweets = JSON.parse(msg);		
+											str='<ul class="bxslider " style="color:black;">';	
+											$.each( tweets, function( key, value ) 
+											{
+											console.log(value); 
+											str+="<li><p>";
+											str+=value;
+											str+="</p></li>";
+											console.log(str);
+											  
+											});
+											str+="</ul>";
+											$('.jq-tweets').html(str);
+											
+										    $('.bxslider').bxSlider({
+												mode: 'fade',
+												controls: false,
+												adaptiveHeight: true
+											});
+										  });
+									}
 										
-										console.log(msg); 				
-										tweets = JSON.parse(msg);		
-										str='<ul class="bxslider " style="color:black;">';	
-										$.each( tweets, function( key, value ) 
-										{
-										console.log(value); 
-										str+="<li><p>";
-										str+=value;
-										str+="</p></li>";
-										console.log(str);
-										  
-										});
-										str+="</ul>";
-										$('.jq-tweets').html(str);
-										
-									    $('.bxslider').bxSlider({
-											mode: 'fade',
-											controls: false,
-											adaptiveHeight: true
-										});
-									  });
+								});
+
+								
 									
 							});
 
