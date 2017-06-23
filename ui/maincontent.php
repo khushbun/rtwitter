@@ -114,7 +114,7 @@
 						<div class="jq-tweets">
 							<ul class="bxslider " style="color:black;">
 								<?php //foreach ($tweets as $result) {
-									 foreach ($tweets->statuses as $key => $tweet) { 
+									 foreach ($tweets->statuses as $tweet) { 
 								?>
 
 									
@@ -122,7 +122,7 @@
 									<p> 
 										<?php 
 											//echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";
-											echo $tweet->text;
+											echo "<h2>".$tweet->text."</h2>";
 										?> 
 									</p>
 								</li>
