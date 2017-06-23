@@ -28,7 +28,7 @@
 		  "count" => 30,
 		  "result_type" => "recent",
 		);
-		$tweets = $twitter->get('search/tweets', $query);
+		$results = $twitter->get('search/tweets', $query);
 	}
 ?>
 <!DOCTYPE html>
