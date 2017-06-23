@@ -23,7 +23,10 @@
 		$twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 		// $twitter = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
-		$tweets = $twitter->get('https://api.twitter.com/1.1/search/tweets.json?q=merhaba&result_type=recent&count=20');
+		$query = array(
+		  "q" => "happy birthday",
+		);
+		$tweets = $twitter->get('search/tweets', $query);
 	}
 ?>
 <!DOCTYPE html>
@@ -33,9 +36,11 @@
   <title>Twitter API SEARCH</title>
 </head>
 <body>
-<?php foreach ($tweets->statuses as $key => $tweet) { ?>
-    Tweet : <img src="<?=$tweet->user->profile_image_url;?>" /><?=$tweet->text; ?><br>
-<?php } ?>
+	<?php 
+		foreach ($results->statuses as $result) {
+	  		echo $result->user->screen_name . ": " . $result->text . "\n";
+		}
+	?>
   
 
 </body>
