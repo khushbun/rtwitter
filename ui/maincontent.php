@@ -25,6 +25,8 @@
 		// $twitter = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
 		$query = array(
 		  "q" => "happy birthday",
+		  "count" => 30,
+		  "result_type" => "recent",
 		);
 		$tweets = $twitter->get('search/tweets', $query);
 	}
