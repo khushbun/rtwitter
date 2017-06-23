@@ -26,7 +26,7 @@
 
 		// $tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 
-		$tweets = $connection->get('search/tweets.json?q=digital&result_type=recent&count=10');
+		$tweets = $connection->get('search/tweets.json',["q" => "digital", "count" =>10]);
 
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
