@@ -24,7 +24,7 @@
 
 		// $twitter = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
 		$query = array(
-		  "q" => "happy birthday",
+		  "q" => "digital marketing",
 		  "count" => 30,
 		  "result_type" => "recent",
 		);
