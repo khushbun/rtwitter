@@ -22,20 +22,13 @@
 		$access_token = $_SESSION['access_token'];
 		$twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
-		function search(array $query){
-  
-		  return $twitter->get('search/tweets', $query);
-		}
- 
+		
 		$query = array(
 		  "q" => "digital marketing",
 		  "count" => 30,
 		  "result_type" => "recent",
 		);
-		  
-		$results = search($query);
-	
-		
+		$results = $twitter->get('search/tweets', $query);
 	}
 ?>
 <!DOCTYPE html>
@@ -47,7 +40,7 @@
 <body>
 	<?php 
 		foreach ($results->statuses as $result) {
-	  		echo $result->user->screen_name . ": " . $result->text . "<br/>";
+	  		echo $result->user->screen_name . ": " . $result->text . "\n";
 		}
 	?>
   
