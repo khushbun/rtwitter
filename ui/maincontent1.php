@@ -22,13 +22,20 @@
 		$access_token = $_SESSION['access_token'];
 		$twitter = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
-		// $twitter = new TwitterOAuth($consumer_key,$consumer_secret,$access_token,$access_token_secret);
+		function search(array $query){
+  
+		  return $twitter->get('search/tweets', $query);
+		}
+ 
 		$query = array(
 		  "q" => "digital marketing",
 		  "count" => 30,
 		  "result_type" => "recent",
 		);
-		$results = $twitter->get('search/tweets', $query);
+		  
+		$results = search($query);
+	
+		
 	}
 ?>
 <!DOCTYPE html>
