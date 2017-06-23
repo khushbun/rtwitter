@@ -16,7 +16,7 @@
 		
 
 	// $utweets = $conn->get('statuses/user_timeline',["screen_name" =>$_POST["user"],'count' => '10']);
-	$utweets = $conn->get('search/tweets',["q" =>'digital', 'count' => '10']);
+	$utweets = $conn->get('https://api.twitter.com/1.1/search/tweets.json?q=merhaba&result_type=recent&count=10');
 	 // https://api.twitter.com/1.1/search/tweets.json?q=%23superbowl
 		
 	$temp = [];
