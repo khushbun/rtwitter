@@ -26,7 +26,7 @@
 
 		// $tweets = $connection->get('statuses/home_timeline',["count" =>10]);
 
-		$tweets = $connection->get('search/tweets.json',["q" => "digital", "count" =>10]);
+		$tweets = $connection->get('https://api.twitter.com/1.1/search/tweets.json?q=digital&result_type=recent&count=10');
 
 		$ajaxfollowers = $connection->get('followers/list',["screen_name" =>$user->screen_name]);
 
@@ -113,8 +113,19 @@
 					<div class="col-lg-5 col-md-12 col-sm-12">
 						<div class="jq-tweets">
 							<ul class="bxslider " style="color:black;">
-								<?php foreach ($tweets as $result) {?>
-								<li><p> <?php echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";?> </p></li>
+								<?php //foreach ($tweets as $result) {
+									 foreach ($tweets->statuses as $key => $tweet) { 
+								?>
+
+									
+								<li>
+									<p> 
+										<?php 
+											//echo "<h2>".$result->user->name . ": " . $result->text . "</h2>";
+											echo $tweet->text;
+										?> 
+									</p>
+								</li>
 								<?php } ?>
 							</ul>
 						</div>
