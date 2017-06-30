@@ -26,12 +26,13 @@ else {
 	
 	  	$m="";
 		  	$index = 1;
-
-	  	foreach (range(1, 2) as $i) {
+		  	while ($index<=30) {
+		  		foreach (range(1, 1) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing ",
 			    "result_type" => "recent",
-			    "max_id" => $m
+			    "max_id" => $m,
+			    "count" => 1
 		  	);
 		 
 		  	$results = $connection->get('search/tweets', $query);
@@ -50,5 +51,7 @@ else {
 
 
 		}
+		  	}
+	  	
 	
 }
