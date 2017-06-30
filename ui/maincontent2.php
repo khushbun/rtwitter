@@ -48,11 +48,13 @@ else {
 	  	echo "max_id".$max_id." dump ".var_dump($max_id);
 	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 	  	echo "<br/>";
+	  	$m="";
 
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 30,
-		    "since_id" => $since_id
+		    "since_id" => $since_id,
+		    "max_id" => $m
 	  	);
 	 
 	  	$results = $connection->get('search/tweets', $query);
