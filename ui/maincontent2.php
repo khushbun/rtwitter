@@ -26,8 +26,8 @@ else {
 	$max_id = "";
 foreach (range(1, 1) as $i) { // up to 1 page
   $query = array(
-    "q" => "#orange",
-    "count" => 10,
+    "q" => "digital marketing",
+    "count" => 30,
     "result_type" => "recent",
     "max_id" => $max_id,
   );
