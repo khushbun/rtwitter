@@ -28,7 +28,6 @@ else {
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 50,
-		    "result_type" => "recent",
 		    "max_id" => $max_id,
 	  	);
 	 
