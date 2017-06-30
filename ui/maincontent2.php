@@ -42,9 +42,9 @@ else {
 		 		$index++; 
 		 		
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
-		 		echo "max_id =>".$result->created_at."<br/>";
+		 		// echo "max_id =>".$result->created_at."<br/>";
 
-		 		echo "max_id =>".$m."<br/><br/>";
+		 		// echo "max_id =>".$m."<br/><br/>";
 		  		
 	    		$m = $result->id_str;	
 	    		if($index == 30){
@@ -52,10 +52,8 @@ else {
 	    		}
 	    				    	
 		  	}
+
 		  	
-		  	if($index == 30){
-	    		break;
-	    	}
 		}
 	  	
 	
