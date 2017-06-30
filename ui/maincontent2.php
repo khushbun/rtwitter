@@ -31,7 +31,7 @@ else {
 		  	$query = array(
 			    "q" => "digital marketing since:2016-06-30",
 			    "result_type" => "recent",
-			    "count" => 5,
+			    "count" => 30,
 			    "max_id" => $m
 		  	);
 		 
@@ -39,7 +39,7 @@ else {
 		  	foreach ($results->statuses as $result) {    	
 		 		// echo $index."<br/>";
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
-		 		echo "created_at =>".$result->created_at."<br/>";
+		 		echo "max_id =>".$result->created_at."<br/>";
 
 		 		echo "max_id =>".$m."<br/><br/>";
 		  		
