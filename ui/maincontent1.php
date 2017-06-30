@@ -25,7 +25,8 @@
 		
 		$query = array(
 		  "q" => "digital marketing",
-		  "count" => 30
+		  "count" => 30,
+		  "page" => 2
 		);
 		$results = $twitter->get('search/tweets', $query);
 	}
@@ -38,8 +39,10 @@
 </head>
 <body>
 	<?php 
+	$i=1;
 		foreach ($results->statuses as $result) {
-	  		echo $result->user->screen_name . ": " . $result->text . "<br>";
+	  		echo $i." => ".$result->user->screen_name . ": " . $result->text . "<br>";
+	  		$i++;
 		}
 	?>
   
