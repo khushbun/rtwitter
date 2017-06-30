@@ -28,7 +28,8 @@ else {
 	  	foreach (range(1, 2) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing",
-			    "count" => 15,
+			    "count" => 30,
+			    "result_type" => "recent",
 			    "max_id" => $m
 		  	);
 		 
