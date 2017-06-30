@@ -48,22 +48,7 @@ else {
 	  	echo "max_id".$max_id." dump ".var_dump($max_id);
 	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 
-	  	$query = array(
-		    "q" => "digital marketing",
-		    "result_type" => "recent",
-		    "count" => 30,
-		    "since_id" => $since_id,
-		    "max_id" => $max_id
-	  	);
-	 
-	  	$results = $connection->get('search/tweets', $query);
-	  	$index = 1;
-	  	foreach ($results->statuses as $result) {    	
-	 
-	    	echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br>";
-	  		$index++;
-	    	
-	  	}
+	  	
 
 	//}
 	
