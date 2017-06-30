@@ -49,27 +49,27 @@ else {
 	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 	  	echo "<br/>";
 	  	$m="";
+	  	foreach (range(1, 1) as $i) {
+		  	$query = array(
+			    "q" => "digital marketing",
+			    "count" => 30,
+			    "since_id" => $since_id,
+			    "max_id" => $m
+		  	);
+		 
+		  	$results = $connection->get('search/tweets', $query);
+		  	$index = 1;
+		  	foreach ($results->statuses as $result) {    	
+		 		// echo $index."<br/>";
+		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/><br/>";
+		  		
+		 		$index++; 
+		    	
+		    	
+		    	 // Set max_id for the next search page
+		    	
+		  	}
 
-	  	$query = array(
-		    "q" => "digital marketing",
-		    "count" => 30,
-		    "since_id" => $since_id,
-		    "max_id" => $m
-	  	);
-	 
-	  	$results = $connection->get('search/tweets', $query);
-	  	$index = 1;
-	  	foreach ($results->statuses as $result) {    	
-	 		// echo $index."<br/>";
-	 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/><br/>";
-	  		
-	 		$index++; 
-	    	
-	    	
-	    	 // Set max_id for the next search page
-	    	
-	  	}
-
-	//}
+		}
 	
 }
