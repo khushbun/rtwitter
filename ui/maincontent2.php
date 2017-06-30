@@ -25,34 +25,33 @@ else {
 	$user = $connection->get("account/verify_credentials");
 	
 	  	$m="";
-		  	$index = 1;
-		  	while ($index<=30) {
-		  		foreach (range(1, 1) as $i) {
-				  	$query = array(
-					    "q" => "digital marketing ",
-					    "result_type" => "recent",
-					    // "max_id" => $m,
-					    "count" => 1
-				  	);
-		 
-		  			$results = $connection->get('search/tweets', $query);
+		  	
+		$index = 0;
 
-				  	foreach ($results->statuses as $result) {    	
-				 		// echo $index."<br/>";
-				 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
-				 		echo "max_id =>".$result->created_at."<br/>";
+  		foreach (range(1, 1) as $i) {
+		  	$query = array(
+			    "q" => "digital marketing ",
+			    "result_type" => "recent",
+			    "max_id" => $m,
+			    "count" => 50
+		  	);
+ 
+  			$results = $connection->get('search/tweets', $query);
 
-				 		echo "max_id =>".$m."<br/><br/>";
-				  		
-				 		$index++; 
-			    		// $m = $result->id_str;		    	
-				  	}
-	    	
+		  	foreach ($results->statuses as $result) {    	
+		 		$index++; 
+		 		
+		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
+		 		echo "max_id =>".$result->created_at."<br/>";
 
-
-
-				}
+		 		echo "max_id =>".$m."<br/><br/>";
+		  		
+	    		$m = $result->id_str;	
+	    		if($index == 30)
+	    			die();	    	
 		  	}
+
+		}
 	  	
 	
 }
