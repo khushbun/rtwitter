@@ -39,6 +39,8 @@ else {
 		  	foreach ($results->statuses as $result) {    	
 		 		// echo $index."<br/>";
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
+		 		echo "created_at =>".$result->created_at."<br/>";
+
 		 		echo "max_id =>".$m."<br/><br/>";
 		  		
 		 		$index++; 
