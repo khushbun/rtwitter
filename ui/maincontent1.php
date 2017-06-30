@@ -29,6 +29,12 @@
 		  "result_type" => "mixed",
 		);
 		$results = $twitter->get('search/tweets', $query);
+		$query2 = array(
+		  "q" => "digital marketing",
+		  "count" => 30,
+		  "result_type" => "recent",
+		);
+		$results2 = $twitter->get('search/tweets', $query2);
 	}
 ?>
 <!DOCTYPE html>
@@ -43,6 +49,12 @@
 		foreach ($results->statuses as $result) {
 	  		echo $i." => ".$result->user->screen_name . ": " . $result->text . "<br>";
 	  		$i++;
+		}
+
+	$j=1;
+		foreach ($results2->statuses as $result) {
+	  		echo $j." => ".$result->user->screen_name . ": " . $result->text . "<br>";
+	  		$j++;
 		}
 	?>
   
