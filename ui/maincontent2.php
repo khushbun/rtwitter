@@ -47,8 +47,10 @@ else {
 		 		echo "max_id =>".$m."<br/><br/>";
 		  		
 	    		$m = $result->id_str;	
-	    		if($index == 30)
-	    			die();	    	
+	    		if($index == 30){
+	    			echo "done<br/><br/>";
+	    		}
+	    				    	
 		  	}
 
 		}
