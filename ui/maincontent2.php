@@ -27,7 +27,7 @@ else {
 	  	$m="";
 		  	$index = 1;
 
-	  	foreach (range(1, 1) as $i) {
+	  	foreach (range(1, 2) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing ",
 			    "result_type" => "recent",
