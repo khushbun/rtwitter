@@ -24,14 +24,14 @@ else {
 	// getting basic user info
 	$user = $connection->get("account/verify_credentials");
 	
-	  	$m="";
+	  	// $m="";
 		  	$index = 1;
 
 	  	foreach (range(1, 6) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing",
 			    "count" => 5,
-			    "max_id" => $m
+			    // "max_id" => $m
 		  	);
 		 
 		  	$results = $connection->get('search/tweets', $query);
@@ -40,7 +40,7 @@ else {
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
 		  		
 		 		$index++; 
-	    		$m = $result->id_str;
+	    		// $m = $result->id_str;
 
 		    	
 		  	}
