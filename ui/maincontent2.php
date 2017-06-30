@@ -27,7 +27,7 @@ else {
 	  	$m="";
 		  	$index = 1;
 
-	  	foreach (range(1, 6) as $i) {
+	  	foreach (range(1, 1) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing since:2016-06-30",
 			    "result_type" => "recent",
@@ -47,7 +47,7 @@ else {
 	    		$m = $result->id_str;		    	
 		  	}
 	    	
-	    	$m = (int)$m-1;
+
 
 
 		}
