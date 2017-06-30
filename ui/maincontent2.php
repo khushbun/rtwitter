@@ -48,11 +48,14 @@ else {
 		  		
 	    		$m = $result->id_str;	
 	    		if($index == 30){
-	    			echo "done<br/><br/>";
+	    			break;
 	    		}
 	    				    	
 		  	}
-
+		  	
+		  	if($index == 30){
+	    		break;
+	    	}
 		}
 	  	
 	
