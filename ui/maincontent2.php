@@ -28,29 +28,30 @@ else {
 		  	$index = 1;
 		  	while ($index<=30) {
 		  		foreach (range(1, 1) as $i) {
-		  	$query = array(
-			    "q" => "digital marketing ",
-			    "result_type" => "recent",
-			    "max_id" => $m,
-			    "count" => 1
-		  	);
+				  	$query = array(
+					    "q" => "digital marketing ",
+					    "result_type" => "recent",
+					    // "max_id" => $m,
+					    "count" => 1
+				  	);
 		 
-		  	$results = $connection->get('search/tweets', $query);
-		  	foreach ($results->statuses as $result) {    	
-		 		// echo $index."<br/>";
-		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
-		 		echo "max_id =>".$result->created_at."<br/>";
+		  			$results = $connection->get('search/tweets', $query);
 
-		 		echo "max_id =>".$m."<br/><br/>";
-		  		
-		 		$index++; 
-	    		$m = $result->id_str;		    	
-		  	}
+				  	foreach ($results->statuses as $result) {    	
+				 		// echo $index."<br/>";
+				 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
+				 		echo "max_id =>".$result->created_at."<br/>";
+
+				 		echo "max_id =>".$m."<br/><br/>";
+				  		
+				 		$index++; 
+			    		// $m = $result->id_str;		    	
+				  	}
 	    	
 
 
 
-		}
+				}
 		  	}
 	  	
 	
