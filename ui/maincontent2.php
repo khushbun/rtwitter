@@ -29,7 +29,7 @@ else {
 		  	$query = array(
 			    "q" => "digital marketing",
 			    "count" => 30,
-			    "until" => '30/5/2016',
+			    "until" => '2017-06-30',
 			    "result_type" => "recent",
 			    "max_id" => $m
 		  	);
