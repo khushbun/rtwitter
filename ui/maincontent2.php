@@ -16,31 +16,32 @@ if (!isset($_SESSION['access_token'])) {
 	$_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
 	$url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
 	echo $url;
-} else {
+} 
+else {
 	$access_token = $_SESSION['access_token'];
 	$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 	
 	// getting basic user info
 	$user = $connection->get("account/verify_credentials");
+	$max_id = "";
+foreach (range(1, 1) as $i) { // up to 1 page
+  $query = array(
+    "q" => "#orange",
+    "count" => 10,
+    "result_type" => "recent",
+    "max_id" => $max_id,
+  );
+ 
+  $results = $connection->get('search/tweets', $query);
+ 
+  foreach ($results->statuses as $result) {
+    echo "[" . $result->user->profile_image_url . "]" .
+         "[" . $result->user->name . "]" .
+         "[" . $result->user->screen_name . "]" .
+         "[" . $result->text . "]\n";
+ 
+    $max_id = $result->id_str; // Set max_id for the next search page
+  }
+}
 	
-	// printing username on screen
-	echo "Welcome " . $user->screen_name . '<br>';
-	// getting recent tweeets by user 'snowden' on twitter
-	$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30]);
-	$totalTweets[] = $tweets;
-	$page = 0;
-	for ($count = 1; $count < 30; $count += 30) { 
-		$max = count($totalTweets[$page]) - 1;
-		$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30, 'max_id' => $totalTweets[$page][$max]->id_str]);
-		$totalTweets[] = $tweets;
-		$page += 1;
-	}
-	// printing recent tweets on screen
-	$start = 1;
-	foreach ($totalTweets as $page) {
-		foreach ($page as $key) {
-			echo $start . ':' . $key->text . '<br>';
-			$start++;
-		}
-	}
 }
