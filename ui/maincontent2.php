@@ -34,8 +34,7 @@ else {
 	 
 	  	$results = $connection->get('search/tweets', $query);
 
-	  	foreach ($results->statuses as $result) {
-	    	
+	  	foreach ($results->statuses as $result) {    	
 	 
 	    	$max_id = $result->id_str;
 	    	
@@ -43,7 +42,7 @@ else {
 	    	
 	  	}
 
-	  	echo "max_id".$max_id;
+	  	echo "max_id".$max_id-1;
 	//}
 	
 }
