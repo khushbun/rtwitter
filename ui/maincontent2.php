@@ -51,8 +51,9 @@ else {
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "result_type" => "recent",
+		    "count" => 30,
 		    "since_id" => $since_id,
-		    "max_id" => $max_id,
+		    "max_id" => $max_id
 	  	);
 	 
 	  	$results = $connection->get('search/tweets', $query);
