@@ -36,8 +36,7 @@ foreach (range(1, 1) as $i) { // up to 1 page
  $ind = 1;
   foreach ($results->statuses as $result) {
     echo $ind." => " ."[" . $result->user->profile_image_url . "]" .
-         "[" . $result->user->name . "]" .
-         "[" . $result->user->screen_name . "]" .
+        
          "[" . $result->text . "]<br/><br/>";
  
     $max_id = $result->id_str; // Set max_id for the next search page
