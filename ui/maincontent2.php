@@ -27,7 +27,7 @@ else {
 	foreach (range(1, 1) as $i) { // up to 1 page
 	  	$query = array(
 		    "q" => "digital marketing",
-		    "count" => 30,
+		    "count" => 50,
 		    "result_type" => "recent",
 		    "max_id" => $max_id,
 	  	);
