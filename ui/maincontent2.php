@@ -47,11 +47,11 @@ else {
 
 	  	echo "max_id".$max_id." dump ".var_dump($max_id);
 	  	echo "<br/>since_id".$since_id.var_dump($since_id);
+	  	echo "<br/>";
 
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 30,
-		    "result_type" => "recent",
 		    "since_id" => $since_id
 	  	);
 	 
@@ -59,7 +59,7 @@ else {
 	  	$index = 1;
 	  	foreach ($results->statuses as $result) {    	
 	 		// echo $index."<br/>";
-	 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br>";
+	 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/><br/>";
 	  		
 	 		$index++; 
 	    	
