@@ -43,8 +43,10 @@ else {
 	  	}
 	  	$since_id = (int)$max_id;
 	  	$since_id = $since_id - 30;
+	  	$since_id = (string)$since_id;
+
 	  	echo "max_id".$max_id." dump ".var_dump($max_id);
-	  	echo "<br/>since_id".$since_id;
+	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 
 	//}
 	
