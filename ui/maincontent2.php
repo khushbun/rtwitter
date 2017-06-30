@@ -27,7 +27,7 @@ else {
 	foreach (range(1, 1) as $i) { // up to 1 page
 	  	$query = array(
 		    "q" => "digital marketing",
-		    "count" => 30,
+		    "count" => 1,
 		    "result_type" => "recent",
 		    "max_id" => $max_id,
 	  	);
@@ -37,7 +37,9 @@ else {
 	  	foreach ($results->statuses as $result) {
 	    	echo $index." => " .$result->user->screen_name . ": " . "[" . $result->text . "]<br/><br/>";
 	 
-	    	$max_id = $result->id_str; // Set max_id for the next search page
+	    	$max_id = $result->id_str;
+	    	echo "max_id => ".$max_id."<br/><br/>";
+	    	 // Set max_id for the next search page
 	    	$index++;
 	  	}
 	}
