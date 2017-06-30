@@ -53,7 +53,6 @@ else {
 		  	$query = array(
 			    "q" => "digital marketing",
 			    "count" => 30,
-			    "since_id" => $since_id,
 			    "max_id" => $m
 		  	);
 		 
