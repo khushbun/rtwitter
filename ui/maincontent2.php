@@ -48,6 +48,24 @@ else {
 	  	echo "max_id".$max_id." dump ".var_dump($max_id);
 	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 
+	  	$query = array(
+		    "q" => "digital marketing",
+		    "count" => 30,
+		    "result_type" => "recent",
+		    "max_id" => $max_id,
+	  	);
+	 
+	  	$results = $connection->get('search/tweets', $query);
+	  	$index = 1;
+	  	foreach ($results->statuses as $result) {    	
+	 		echo $index."<br/>";
+	 		$index++; 
+	    	
+	    	
+	    	 // Set max_id for the next search page
+	    	
+	  	}
+
 	//}
 	
 }
