@@ -24,7 +24,7 @@ else {
 	// getting basic user info
 	$user = $connection->get("account/verify_credentials");
 	$max_id = "";
-	foreach (range(1, 1) as $i) { // up to 1 page
+	//foreach (range(1, 1) as $i) { // up to 1 page
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 1,
@@ -33,15 +33,17 @@ else {
 	  	);
 	 
 	  	$results = $connection->get('search/tweets', $query);
-	 	$index = 1;
+
 	  	foreach ($results->statuses as $result) {
-	    	echo $index." => " .$result->user->screen_name . ": " . "[" . $result->text . "]<br/><br/>";
+	    	
 	 
 	    	$max_id = $result->id_str;
-	    	echo "max_id => ".$max_id."<br/><br/>";
+	    	
 	    	 // Set max_id for the next search page
-	    	$index++;
+	    	
 	  	}
-	}
+
+	  	echo "max_id".$max_id;
+	//}
 	
 }
