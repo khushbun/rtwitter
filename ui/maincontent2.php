@@ -43,10 +43,11 @@ else {
 		  		
 		 		$index++; 
 	    		$m = $result->id_str;
-	    		$m = (int)$m-1;
 
 		    	
 		  	}
+	    		// $m = (int)$m-1;s
+
 
 		}
 	
