@@ -29,7 +29,7 @@ if (!isset($_SESSION['access_token'])) {
 	$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30]);
 	$totalTweets[] = $tweets;
 	$page = 0;
-	for ($count = 30; $count < 180; $count += 30) { 
+	for ($count = 1; $count < 30; $count += 30) { 
 		$max = count($totalTweets[$page]) - 1;
 		$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30, 'max_id' => $totalTweets[$page][$max]->id_str]);
 		$totalTweets[] = $tweets;
