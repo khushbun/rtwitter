@@ -29,7 +29,7 @@ else {
 
 	  	foreach (range(1, 6) as $i) {
 		  	$query = array(
-			    "q" => "digital marketing",
+			    "q" => "digital marketing since:2016-06-30",
 			    "count" => 5,
 			    "max_id" => $m
 		  	);
@@ -38,9 +38,11 @@ else {
 		  	foreach ($results->statuses as $result) {    	
 		 		// echo $index."<br/>";
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
+		 		echo "max_id =>".$m."<br/><br/>";
 		  		
 		 		$index++; 
 	    		$m = $result->id_str;
+	    		$m = (int)$m-1;
 
 		    	
 		  	}
