@@ -35,9 +35,7 @@ else {
 	  	$results = $connection->get('search/tweets', $query);
 	 	$index = 1;
 	  	foreach ($results->statuses as $result) {
-	    	echo $ind." => " ."[" . $result->user->profile_image_url . "]" .
-	        
-	         "[" . $result->text . "]<br/><br/>";
+	    	echo $index." => " . "[" . $result->text . "]<br/><br/>";
 	 
 	    	$max_id = $result->id_str; // Set max_id for the next search page
 	    	$index++;
