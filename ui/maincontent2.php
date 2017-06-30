@@ -29,8 +29,6 @@ else {
 		  	$query = array(
 			    "q" => "digital marketing",
 			    "count" => 30,
-			    "until" => '2017-06-30',
-			   
 			    "max_id" => $m
 		  	);
 		 
