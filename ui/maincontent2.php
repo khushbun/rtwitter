@@ -24,7 +24,7 @@ else {
 	// getting basic user info
 	$user = $connection->get("account/verify_credentials");
 	$max_id = "";
-	foreach (range(1, 3) as $i) { // up to 1 page
+	foreach (range(1, 1) as $i) { // up to 1 page
 	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 30,
