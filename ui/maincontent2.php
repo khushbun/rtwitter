@@ -23,31 +23,7 @@ else {
 	
 	// getting basic user info
 	$user = $connection->get("account/verify_credentials");
-	$max_id = "";
-	//foreach (range(1, 1) as $i) { // up to 1 page
-	  	$query = array(
-		    "q" => "digital marketing",
-		    "count" => 1,
-		    "result_type" => "recent",
-		    "max_id" => $max_id,
-	  	);
-	 
-	  	$results = $connection->get('search/tweets', $query);
-
-	  	foreach ($results->statuses as $result) {    	
-	 
-	    	$max_id = $result->id_str;
-	    	
-	    	 // Set max_id for the next search page
-	    	
-	  	}
-	  	$since_id = (int)$max_id;
-	  	$since_id = $since_id - 30;
-	  	
-
-	  	echo "max_id".$max_id." dump ".var_dump($max_id);
-	  	echo "<br/>since_id".$since_id.var_dump($since_id);
-	  	echo "<br/>";
+	
 	  	$m="";
 	  	foreach (range(1, 1) as $i) {
 		  	$query = array(
