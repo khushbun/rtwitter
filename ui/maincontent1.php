@@ -26,8 +26,8 @@
 		$query = array(
 		  "q" => "digital marketing",
 		  "count" => 30,
-		  "result_type" => "mixed",
-		);
+		   'since_id' => '0',
+		   		);
 		$results = $twitter->get('search/tweets', $query);
 		$query2 = array(
 		  "q" => "digital marketing",
