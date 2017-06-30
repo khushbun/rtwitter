@@ -25,8 +25,7 @@
 		
 		$query = array(
 		  "q" => "digital marketing",
-		  "count" => 30,
-		  "result_type" => "recent",
+		  "count" => 30
 		);
 		$results = $twitter->get('search/tweets', $query);
 	}
@@ -47,9 +46,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
