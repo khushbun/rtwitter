@@ -64,9 +64,8 @@ else {
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/><br/>";
 		  		
 		 		$index++; 
-		    	
-		    	
-		    	 // Set max_id for the next search page
+	    		$m = $result->id_str;
+
 		    	
 		  	}
 
