@@ -26,12 +26,12 @@ if (!isset($_SESSION['access_token'])) {
 	// printing username on screen
 	echo "Welcome " . $user->screen_name . '<br>';
 	// getting recent tweeets by user 'snowden' on twitter
-	$tweets = $connection->get('statuses/user_timeline', ['count' => 200, 'exclude_replies' => true, 'include_rts' => false]);
+	$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30]);
 	$totalTweets[] = $tweets;
 	$page = 0;
-	for ($count = 200; $count < 500; $count += 200) { 
+	for ($count = 30; $count < 180; $count += 30) { 
 		$max = count($totalTweets[$page]) - 1;
-		$tweets = $connection->get('statuses/user_timeline', ['count' => 200, 'exclude_replies' => true, 'max_id' => $totalTweets[$page][$max]->id_str, 'include_rts' => false]);
+		$tweets = $connection->get('search/tweets', ["q" => "digital marketing", "count" => 30, 'max_id' => $totalTweets[$page][$max]->id_str]);
 		$totalTweets[] = $tweets;
 		$page += 1;
 	}
