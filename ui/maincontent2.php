@@ -35,7 +35,7 @@ foreach (range(1, 1) as $i) { // up to 1 page
   $results = $connection->get('search/tweets', $query);
  $ind = 1;
   foreach ($results->statuses as $result) {
-    echo $ind. => ."[" . $result->user->profile_image_url . "]" .
+    echo $ind." => " ."[" . $result->user->profile_image_url . "]" .
          "[" . $result->user->name . "]" .
          "[" . $result->user->screen_name . "]" .
          "[" . $result->text . "]<br/><br/>";
