@@ -47,7 +47,7 @@ else {
 	    		$m = $result->id_str;		    	
 		  	}
 	    	
-	    	$m = (int)$m-1;s
+	    	$m = (int)$m-1;
 
 
 		}
