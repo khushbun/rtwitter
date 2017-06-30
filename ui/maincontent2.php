@@ -41,8 +41,10 @@ else {
 	    	 // Set max_id for the next search page
 	    	
 	  	}
+	  	$since_id = $max_id - 30;
+	  	echo "max_id".$max_id;
+	  	echo "since_id".$max_id;
 
-	  	echo "max_id".$max_id-1;
 	//}
 	
 }
