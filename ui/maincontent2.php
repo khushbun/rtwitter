@@ -30,6 +30,7 @@ else {
 	  	foreach (range(1, 6) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing since:2016-06-30",
+			    "result_type" => "recent",
 			    "count" => 5,
 			    "max_id" => $m
 		  	);
