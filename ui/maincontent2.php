@@ -53,6 +53,7 @@ else {
 		    "count" => 30,
 		    "result_type" => "recent",
 		    "max_id" => $max_id,
+		    "since_id" => $since_id
 	  	);
 	 
 	  	$results = $connection->get('search/tweets', $query);
