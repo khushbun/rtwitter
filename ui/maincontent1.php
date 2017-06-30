@@ -26,7 +26,7 @@
 		$query = array(
 		  "q" => "digital marketing",
 		  "count" => 30,
-		  "page" => 2
+		  "max_id" => 30
 		);
 		$results = $twitter->get('search/tweets', $query);
 	}
