@@ -52,14 +52,15 @@ else {
 		    "q" => "digital marketing",
 		    "count" => 30,
 		    "result_type" => "recent",
-		    "max_id" => $max_id,
 		    "since_id" => $since_id
 	  	);
 	 
 	  	$results = $connection->get('search/tweets', $query);
 	  	$index = 1;
 	  	foreach ($results->statuses as $result) {    	
-	 		echo $index."<br/>";
+	 		// echo $index."<br/>";
+	 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br>";
+	  		
 	 		$index++; 
 	    	
 	    	
