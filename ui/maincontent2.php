@@ -25,16 +25,16 @@ else {
 	$user = $connection->get("account/verify_credentials");
 	$max_id = "";
 	//foreach (range(1, 1) as $i) { // up to 1 page
-	  	$queryfind = array(
+	  	$query = array(
 		    "q" => "digital marketing",
 		    "count" => 1,
 		    "result_type" => "recent",
 		    "max_id" => $max_id,
 	  	);
 	 
-	  	$resultsfind = $connection->get('search/tweets', $query);
+	  	$results = $connection->get('search/tweets', $query);
 
-	  	foreach ($resultsfind->statuses as $result) {    	
+	  	foreach ($results->statuses as $result) {    	
 	 
 	    	$max_id = $result->id_str;
 	    	
@@ -45,10 +45,8 @@ else {
 	  	$since_id = $since_id - 30;
 	  	
 
-	  	echo "max_id".$max_id." dump ";
-	  	echo "<br/> since_id".$since_id;
-
-
+	  	echo "max_id".$max_id." dump ".var_dump($max_id);
+	  	echo "<br/>since_id".$since_id.var_dump($since_id);
 
 	//}
 	
