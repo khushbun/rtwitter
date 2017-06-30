@@ -25,16 +25,16 @@ else {
 	$user = $connection->get("account/verify_credentials");
 	
 	  	$m="";
+		  	$index = 1;
+	  	
 	  	foreach (range(1, 2) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing",
-			    "count" => 30,
-			    "result_type" => "recent",
+			    "count" => 15,
 			    "max_id" => $m
 		  	);
 		 
 		  	$results = $connection->get('search/tweets', $query);
-		  	$index = 1;
 		  	foreach ($results->statuses as $result) {    	
 		 		// echo $index."<br/>";
 		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/><br/>";
