@@ -27,7 +27,7 @@ else {
 	  	$m="";
 		  	$index = 1;
 
-	  	foreach (range(1, 2) as $i) {
+	  	foreach (range(1, 1) as $i) {
 		  	$query = array(
 			    "q" => "digital marketing",
 			    "count" => 15,
@@ -35,16 +35,7 @@ else {
 		  	);
 		 
 		  	$results = $connection->get('search/tweets', $query);
-		  	foreach ($results->statuses as $result) {    	
-		 		// echo $index."<br/>";
-		 		echo $index." => ".$result->user->screen_name . ": " . $result->text . "<br/>";
-		  		
-		 		$index++; 
-	    		$m = $result->id_str;
-
-		    	
-		  	}
-
+		  	print_r($results);
 		}
 	
 }
