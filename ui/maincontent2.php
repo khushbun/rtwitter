@@ -44,11 +44,10 @@ else {
 		 		echo "max_id =>".$m."<br/><br/>";
 		  		
 		 		$index++; 
-	    		$m = $result->id_str;
-
-		    	
+	    		$m = $result->id_str;		    	
 		  	}
-	    		// $m = (int)$m-1;s
+	    	
+	    	$m = (int)$m-1;s
 
 
 		}
