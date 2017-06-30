@@ -41,7 +41,7 @@ foreach (range(1, 1) as $i) { // up to 1 page
          "[" . $result->text . "]\n";
  
     $max_id = $result->id_str; // Set max_id for the next search page
-    $ind ++;
+    $ind++ ;
   }
 }
 	
